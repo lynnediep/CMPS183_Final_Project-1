@@ -26,7 +26,7 @@
                     v-bind:class="{'disabled': !logged_in}">
                 <!-- 'disabled' html attribute will be T/F based on !logged_in -->
                 <!-- 'disabled' class will appear based on T/F of !logged_in -->
-                <i class="fa fa-plus"></i>Add Memo
+                <i class="fa fa-plus"></i> Add Meal Event
             </button>
             <button v-if="is_adding_memo" class="btn" v-on:click="add_memo_button()">
                 <i class="fa fa-times"></i>Cancel
