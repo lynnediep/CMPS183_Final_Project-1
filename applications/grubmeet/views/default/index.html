@@ -29,7 +29,7 @@
                 <i class="fa fa-plus"></i> Add Meal Event
             </button>
             <button v-if="is_adding_memo" class="btn" v-on:click="add_memo_button()">
-                <i class="fa fa-times"></i>Cancel
+                <i class="fa fa-times"></i> Cancel
             </button>
         </div>
 
@@ -51,6 +51,28 @@
                         <span class="help-block"></span>
                     </div>
                 </div>
+                <div class="form-group" id="no_table_datetime__row">
+                    <div>
+                        <input class="form-control string" id="no_table_emo" v-model="form_datetime"
+                               placeholder="Date and Time" type="text"/>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+                <div class="form-group" id="no_table_area__row">
+                    <div>
+                        <input class="form-control string" id="no_table_emo" v-model="form_area"
+                               placeholder="Location" type="text"/>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+                <div class="form-group" id="no_table_allergens__row">
+                    <div>
+                        <input class="form-control string" id="no_table_emo" v-model="form_allergens"
+                               placeholder="Allergens (vegan, gluten-free, etc.)" type="text"/>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+
                 <div class="form-group" id="submit_record__row">
                     <div>
                         <input class="btn btn-primary" id="add_memo_submit" type="submit" value="Submit"/>
@@ -63,6 +85,9 @@
             <div v-if="!m.is_being_edited" class="memo_text">
                 <div class="memo_title">${m.title}</div>
                 <div class="memo_content">${m.memo}</div>
+                <div class="memo_datetime">@{m.datetime}</div>
+                <div class="memo_area">@{m.area}</div>
+                <div class="memo_allergens">@{m.allergens}</div>
             </div>
             <div>
 
@@ -85,6 +110,28 @@
                                 <span class="help-block"></span>
                             </div>
                         </div>
+                        <div class="form-group" id="no_table_datetime__row">
+                            <div>
+                                <input class="form-control string" id="no_table_emo" v-model="form_edit_datetime"
+                                       placeholder="Date and Time" type="text"/>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="no_table_area__row">
+                            <div>
+                                <input class="form-control string" id="no_table_emo" v-model="form_edit_area"
+                                       placeholder="Location" type="text"/>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="no_table_allergens__row">
+                            <div>
+                                <input class="form-control string" id="no_table_emo" v-model="form_edit_allergens"
+                                       placeholder="Allergens (vegan, gluten-free, etc.)" type="text"/>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
                         <div class="form-group" id="edit_save_cancel">
                             <div>
                                 <input class="btn btn-primary" id="edit_memo_save" type="submit" value="Save"/>
@@ -126,17 +173,20 @@
             </button>
         </div>
     {{else:}}
-        <h1 class="main_title center">Welcome!</h1>
-        <p class="explanation center">This site will help you organize your life by storing your memos.
-            Please log in to use it.</p>
+        <h1 class="main_title center">Welcome to GrubMeet!</h1>
+        <p class="explanation center">New to the city? Sign up for GrubMeet and have a meal
+        with strangers who might turn into friends!</p>
         <div class="login_button center">
             <a href="{{=URL('default', 'user')}}" class="btn">Login</a>
         </div>
-        <h4 class="center">Other User's Public Memos</h4>
+        <h4 class="center">Open Meal Events</h4>
         <div v-for="m in memolist" class="memo">
             <div class="memo_text">
                 <div class="memo_title">${m.title}</div>
                 <div class="memo_content">${m.memo}</div>
+                <div class="memo_datetime">@{m.datetime}</div>
+                <div class="memo_area">@{m.area}</div>
+                <div class="memo_allergens">@{m.allergens}</div>
             </div>
             <div>
                 <div class="button_list">
