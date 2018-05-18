@@ -29,6 +29,7 @@ def get_memos():
                 user_email=r.user_email,
                 title=r.title,
                 memo=r.memo,
+                datetime=r.dateime,
                 time=r.updated_on,
                 is_public=r.is_public,
                 is_being_edited=False,
