@@ -454,7 +454,7 @@ class TestIsHttpUrl(unittest.TestCase):
             'http://www.yahoo:1600.com',
             'path/segment/without/starting/slash',
             'http://www.math.uio.no;param=3',
-            '://ABC.com:/%7esmith/home.html',
+            '://ABC.com:/%7esmith/sidebar.html',
         ]
 
         failures = []
@@ -469,18 +469,18 @@ class TestIsHttpUrl(unittest.TestCase):
     def testValidUrls(self):
 
         urlsToCheck = [
-            'http://abc.com:80/~smith/home.html',
-            'http://ABC.com/%7Esmith/home.html',
-            'http://ABC.com:/%7esmith/home.html',
+            'http://abc.com:80/~smith/sidebar.html',
+            'http://ABC.com/%7Esmith/sidebar.html',
+            'http://ABC.com:/%7esmith/sidebar.html',
             'http://www.math.uio.no/faq/compression-faq/part1.html',
             '//google.ca/faq/compression-faq/part1.html',
             '//google.ca/faq;param=3',
-            '//google.ca/faq/index.html?query=5',
-            '//google.ca/faq/index.html;param=value?query=5',
+            '//google.ca/faq/sidebar.html?query=5',
+            '//google.ca/faq/sidebar.html;param=value?query=5',
             '/faq/compression-faq/part1.html',
             '/faq;param=3',
-            '/faq/index.html?query=5',
-            '/faq/index.html;param=value?query=5',
+            '/faq/sidebar.html?query=5',
+            '/faq/sidebar.html;param=value?query=5',
             'google.com',
             'benn.ca/init/default',
             'benn.ca/init;param=value/default?query=value',
@@ -521,7 +521,7 @@ class TestIsHttpUrl(unittest.TestCase):
             'http://localhost/hello;param=value',
             'http://localhost/hello;param=value/hi;param2=value2;param3=value3',
             'http://localhost/hello?query=True',
-            'http://www.benn.ca/hello;param=value/hi;param2=value2;param3=value3/index.html?query=3',
+            'http://www.benn.ca/hello;param=value/hi;param2=value2;param3=value3/sidebar.html?query=3',
             'http://localhost/hello/?query=1500&five=6',
             'http://localhost:8080',
             'http://localhost:8080/',

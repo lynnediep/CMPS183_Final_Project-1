@@ -580,7 +580,7 @@ def data():
     return TABLE(*[TR(v) for v in session.m]).xml()
     """.strip(),language='web2py',link=URL('global','vars'),_class='boxCode')}}
     <b>In view: ajax_examples/index.html</b>
-    {{=CODE(open(os.path.join(request.folder,'views/ajax_examples/index.html'),'r').read(),language='html',link=URL('global','vars'),_class='boxCode')}}
+    {{=CODE(open(os.path.join(request.folder,'views/ajax_examples/sidebar.html'),'r').read(),language='html',link=URL('global','vars'),_class='boxCode')}}
     <p>The javascript function "ajax" is provided in "web2py_ajax.html" and included by "layout.html". It takes three arguments, a url, a list of ids and a target id. When called, it sends to the url (via a get) the values of the ids and display the response in the value (of innerHTML) of the target id.
     <br/>Try it here: <a class="btn" href="/{{=request.application}}/ajax_examples/index">index</a></p>
 

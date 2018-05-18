@@ -1860,7 +1860,7 @@ def demo_app(environ, start_response):
     if static_folder:
         if not static_folder.startswith('/'):
             static_folder = os.path.join(os.getcwd(),static_folder)
-        path = os.path.join(static_folder, environ['PATH_INFO'][1:] or 'index.html')
+        path = os.path.join(static_folder, environ['PATH_INFO'][1:] or 'sidebar.html')
         type = types.get(path.split('.')[-1],'text')
         if os.path.exists(path):
             try:

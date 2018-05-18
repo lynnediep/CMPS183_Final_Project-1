@@ -90,7 +90,7 @@ class TestTemplate(unittest.TestCase):
                 return StringIO("[[block left_sidebar]]left[[end]]"
                                 "[[include]]"
                                 "[[block right_sidebar]]right[[end]]")
-            elif path == pjoin('views', 'default', 'index.html'):
+            elif path == pjoin('views', 'default', 'sidebar.html'):
                 return StringIO("{{extend 'layout.html'}}"
                                 "{{block left_sidebar}}{{super}} {{end}}"
                                 "to"
@@ -111,7 +111,7 @@ class TestTemplate(unittest.TestCase):
 
         with monkey_patch(template, 'open', dummy_open):
             self.assertEqual(
-                render(filename=pjoin('views', 'default', 'index.html'),
+                render(filename=pjoin('views', 'default', 'sidebar.html'),
                        path='views'),
                 'left to right')
             self.assertEqual(

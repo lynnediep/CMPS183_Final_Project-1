@@ -154,7 +154,7 @@ def index():
     return dict(message=message)
 """
             )
-        with open(pjoin(self.apppath, 'views', 'default', 'index.html'), 'w') as testview:
+        with open(pjoin(self.apppath, 'views', 'default', 'sidebar.html'), 'w') as testview:
             testview.write(
 """
 <html>

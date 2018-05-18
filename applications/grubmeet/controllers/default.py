@@ -8,11 +8,14 @@
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
 
+def sidebar():
+    response.flash = T("Hello World")
+    return dict(message=T('Welcome to web2py!'))
 
-def index():
+def explore():
     """
     example action using the internationalization operator T and flash
-    rendered by views/default/index.html or views/generic.html
+    rendered by views/default/sidebar.html or views/generic.html
 
     if you need a simple wiki simply replace the two lines below with:
     return auth.wiki()
@@ -20,6 +23,21 @@ def index():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
+def create_meal():
+    response.flash = T("Hello World")
+    return dict(message=T('Welcome to web2py!'))
+
+def messages():
+    response.flash = T("Hello World")
+    return dict(message=T('Welcome to web2py!'))
+
+def calendar():
+    response.flash = T("Hello World")
+    return dict(message=T('Welcome to web2py!'))
+
+def preferences():
+    response.flash = T("Hello World")
+    return dict(message=T('Welcome to web2py!'))
 
 def user():
     """
