@@ -1,4 +1,8 @@
-.
 .idea/
 .DS_Store
-httpserver\.pid
+.log
+httpserver.log
+httpserver.pid
+applications/*/sessions/*
+gluon/rocket.pyc
+parameters_8000.py
