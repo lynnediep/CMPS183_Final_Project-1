@@ -6,3 +6,5 @@ httpserver.pid
 applications/*/sessions/*
 gluon/rocket.pyc
 parameters_8000.py
+storage.sqlite
+applications/*/errors/*
