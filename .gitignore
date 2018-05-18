@@ -1,10 +1,6 @@
 .idea/
 .DS_Store
-.log
-httpserver.log
-httpserver.pid
-applications/*/sessions/*
-gluon/rocket.pyc
-parameters_8000.py
-storage.sqlite
 applications/*/errors/*
+applications/*/databases/*
+applications/*/sessions/*
+applications/*/cache/*
