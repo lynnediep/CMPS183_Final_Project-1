@@ -1,0 +1,45 @@
+#side-menu {
+    background-color: #ff4a55;
+    width: 140px;
+}
+
+#logo {
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+}
+
+.ui.labeled.icon.menu .item {
+    min-width: 0px;
+}
+
+.ui.icon.menu .item {
+    color: white;
+}
+
+/*menu icon size*/
+.ui.labeled.icon.menu .item > .icon:not(.dropdown) {
+    font-size: 2em !important;
+}
+
+/*active menu arrow*/
+.ui.vertical.pointing.menu .active.item:hover:after,
+.ui.vertical.pointing.menu .active.item:after {
+    background-color: #ff4a55;
+}
+
+/*menu hover*/
+.ui.vertical.menu .active.item,
+.ui.link.menu .item:hover,
+.ui.menu .dropdown.item:hover,
+.ui.menu .link.item:hover,
+.ui.menu a.item:hover,
+.ui.menu .active.item:hover,
+.ui.vertical.menu .active.item:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#content {
+    padding-left: 140px;
+}

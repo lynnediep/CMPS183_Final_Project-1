@@ -1,0 +1,12 @@
+#explore-body {
+    padding: 20px;
+}
+
+#explore-search {
+    text-align: right;
+    padding-bottom: 20px;
+}
+
+.ui.cards > .card {
+    width: 225px;
+}

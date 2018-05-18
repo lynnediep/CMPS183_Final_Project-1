@@ -1,0 +1,44 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"/>
+    <link href="{{=URL('static','css/sidebar.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+</head>
+
+<div id="side-menu" class="ui pointing left fixed labeled icon vertical pointing menu">
+    <div id="logo" class="item">
+        GRUBMEET
+    </div>
+    <a class="item">
+        <img class="ui circular image" src="https://image.flaticon.com/icons/svg/145/145867.svg"
+             style="background: white;">
+        <div style="padding-top: 10px;">Sign Out</div>
+    </a>
+    <a href="{{=URL('default', 'create_meal')}}" id="create_meal_tab" class="item">
+        <i class="plus icon"></i>
+        Create Meal
+    </a>
+    <a href="{{=URL('default', 'explore')}}" id="explore_tab" class="item">
+        <i class="Search icon"></i>
+        Explore
+    </a>
+    <a href="{{=URL('default', 'messages')}}" id="messages_tab" class="item">
+        <i class="envelope outline icon"></i>
+        Messages
+
+    </a>
+    <a href="{{=URL('default', 'calendar')}}" id="calendar_tab" class="item">
+        <i class="calendar alternate outline icon"></i>
+        Calendar</a>
+    <a href="{{=URL('default', 'preferences')}}" id="preferences_tab" class="item">
+        <i class="cogs icon"></i>
+        Preferences
+    </a>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+<script src="{{=URL('static','js/default/sidebar.js')}}"></script>
+
+
+<div id="content">{{include}}</div>

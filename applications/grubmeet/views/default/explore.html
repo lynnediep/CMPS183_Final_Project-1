@@ -1,0 +1,113 @@
+{{extend 'default/sidebar.html'}}
+<head>
+    <link href="{{=URL('static','css/explore.css')}}" rel="stylesheet" type="text/css"/>
+</head>
+<div id="explore-body">
+    <div id="explore-search">
+        <div class="ui icon input">
+            <input type="text" placeholder="Search...">
+            <i class="search icon"></i>
+        </div>
+    </div>
+    <div class="ui special cards">
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui inverted button" onclick="more_detail_modal()">More Details</div>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="https://image.flaticon.com/icons/svg/214/214298.svg">
+            </div>
+            <div class="content">
+                <div class="header">Donut Party</div>
+                <div class="meta">
+                    <div class="ui orange circular tiny labels">
+                        <a class="ui  label">Donuts</a>
+                        <a class="ui  label">Sweets </a>
+                        <a class="ui  label">Party </a>
+                    </div>
+                </div>
+            </div>
+            <div class="extra content">
+                <div><i class="users icon"></i>2 out of 8 People Joined</div>
+                <div><i class="map marker alternate icon"></i>Santa Cruz</div>
+                <div><i class="clock outline icon"></i>5/21/2018 6:00PM</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui inverted button" onclick="more_detail_modal()">More Details</div>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="https://image.flaticon.com/icons/svg/135/135578.svg">
+            </div>
+            <div class="content">
+                <div class="header">Cupcake</div>
+                <div class="meta">
+                    <div class="ui yellow circular tiny labels">
+                        <a class="ui  label">Cupcake</a>
+                    </div>
+                </div>
+            </div>
+            <div class="extra content">
+                <div><i class="users icon"></i>2 out of 8 People Joined</div>
+                <div><i class="map marker alternate icon"></i>Santa Cruz</div>
+                <div><i class="clock outline icon"></i>5/21/2018 6:00PM</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui inverted button" onclick="more_detail_modal()">More Details</div>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="https://image.flaticon.com/icons/svg/135/135715.svg">
+            </div>
+            <div class="content">
+                <div class="header">Vegetarian Dinner</div>
+                <div class="meta">
+                    <div class="ui green circular tiny labels">
+                        <a class="ui  label">Vegetarian</a>
+                        <a class="ui  label">Healthy </a>
+                        <a class="ui  label">Dinner </a>
+                    </div>
+                </div>
+            </div>
+            <div class="extra content">
+                <div><i class="users icon"></i>2 out of 8 People Joined</div>
+                <div><i class="map marker alternate icon"></i>Santa Cruz</div>
+                <div><i class="clock outline icon"></i>5/21/2018 6:00PM</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="popup" class="ui modal">
+    <div class="header">Header</div>
+
+    <div class="scrolling content">
+        <p>Content goes here</p>
+    </div>
+    <div class="actions">
+        <div class="ui black deny button">
+            Close
+        </div>
+    </div>
+</div>
+
+
+<script src="{{=URL('static','js/default/explore.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/glidejs@2.1.0/dist/glide.min.js"></script>
