@@ -29,6 +29,9 @@ def get_memos():
                 user_email=r.user_email,
                 title=r.title,
                 memo=r.memo,
+                datetime=r.datetime,
+                area=r.area,
+                allergens=r.allergens,
                 time=r.updated_on,
                 is_public=r.is_public,
                 is_being_edited=False,
@@ -51,7 +54,10 @@ def add_memo():
     t_id = db.checklist.insert(
         # paramters synchronous with post request in add_memo JS function
         title=request.vars.title,
-        memo=request.vars.memo
+        memo=request.vars.memo,
+        datetime=request.vars.datetime,
+        area=request.vars.area,
+        allergens=request.vars.allergens
     )
     t = db.checklist(t_id)
     # to make edit work right after adding a memo
@@ -73,7 +79,10 @@ def edit_memo():
 
     t_id = row.update_record(
         title=request.vars.title,
-        memo=request.vars.memo
+        memo=request.vars.memo,
+        datetime=request.vars.datetime,
+        area=request.vars.area,
+        allergens=request.vars.allergens
     )
 
     print('done')

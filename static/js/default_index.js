@@ -61,6 +61,9 @@ var app = function () {
             {
                 title: self.vue.form_title,
                 memo: self.vue.form_memo,
+                datetime: self.vue.form_datetime,
+                area: self.vue.form_area,
+                allergens: self.vue.form_allergens
             },
             // data is what's returned from api add_memo
             function (data) {
@@ -73,6 +76,9 @@ var app = function () {
                 self.vue.memolist.unshift(data.memo);
                 self.vue.form_title = "";
                 self.vue.form_memo = "";
+                self.vue.form_datetime = "";
+                self.vue.form_area = "";
+                self.vue.form_allergens = "";
                 self.vue.is_adding_memo = false;
                 enumerate(self.vue.memolist);
             });
@@ -102,6 +108,9 @@ var app = function () {
                 memo_id: self.vue.memolist[m_idx].id,
                 title: self.vue.form_edit_title,
                 memo: self.vue.form_edit_memo,
+                datetime: self.vue.form_edit_datetime,
+                area: self.vue.form_edit_area,
+                allergens: self.vue.form_edit_allergens
             },
             // data is what's returned from api add_memo
             function (data) {
@@ -109,6 +118,9 @@ var app = function () {
                 console.log(data.memo);
                 self.vue.memolist[m_idx].title = data.memo.title;
                 self.vue.memolist[m_idx].memo = data.memo.memo;
+                self.vue.memolist[m_idx].datetime = data.memo.datetime;
+                self.vue.memolist[m_idx].area = data.memo.area;
+                self.vue.memolist[m_idx].allergens = data.memo.allergens;
 
                 // data.memo is from api/edit_memo()
                 self.vue.memolist[m_idx].is_being_edited = false;
@@ -125,6 +137,9 @@ var app = function () {
         self.vue.memolist[m_idx].is_being_edited = true;
         self.vue.form_edit_title = self.vue.memolist[m_idx].title;
         self.vue.form_edit_memo = self.vue.memolist[m_idx].memo;
+        self.vue.form_edit_datetime = self.vue.memolist[m_idx].datetime;
+        self.vue.form_edit_area = self.vue.memolist[m_idx].area;
+        self.vue.form_edit_allergens = self.vue.memolist[m_idx].allergens;
     }
 
 
@@ -153,9 +168,15 @@ var app = function () {
             has_more: false,
             form_title: null,
             form_memo: null,
+            form_datetime: null,
+            form_area: null,
+            form_allergens: null,
             add_pending: false,
             form_edit_title: null,
             form_edit_memo: null,
+            form_edit_datetime: null,
+            form_edit_area: null,
+            form_edit_allergens: null
         },
         methods: {
             add_memo_button: self.add_memo_button,

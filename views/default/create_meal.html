@@ -1,9 +1,79 @@
 {{extend 'default/sidebar.html'}}
 
-<div>create meal</div>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"/>
+    <link href="{{=URL('static','css/form.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+</head>
+
+<br/>
+
+<form class="create_event ui form">
+  <div class="field">
+    <label>Event Name</label>
+    <input type="text" name="event-name" placeholder="Event name">
+  </div>
+  <div class="field">
+    <label>Description</label>
+    <input type="text" name="description" placeholder="What's your event about?">
+  </div>
+  <div class="field">
+      <label>Date and Time</label>
+      <input type="text" name="date-time" placeholder="Date and time of event">
+  </div>
+  <div class="field">
+      <label>Location</label>
+      <input type="text" name="location" placeholder="Location">
+  </div>
+
+  <div class="inline fields">
+    <label>Allergens?</label>
+    <div class="field">
+
+        <input type="radio" name="allergens" tabindex="0" class="hidden">
+        <label>Vegetarian</label>
+
+    </div>
+    <div class="field">
+
+        <input type="radio" name="allergens" tabindex="0" class="hidden">
+        <label>Gluten-Free</label>
+
+    </div>
+    <div class="field">
+
+        <input type="radio" name="allergens" tabindex="0" class="hidden">
+        <label>Vegan</label>
+
+    </div>
+    <div class="field">
+
+        <input type="radio" name="allergens" tabindex="0" class="hidden">
+        <label>Halal</label>
+
+    </div>
+    <div class="field">
+
+        <input type="radio" name="allergens" tabindex="0" class="hidden">
+        <label>None</label>
+
+    </div>
+
+  </div>
+
+
+
+<br/>
+  <button class="ui button" type="submit">Add Event!</button>
+</form>
+
+
+
 
 
 <script>
 $('#create_meal_tab').addClass("active");
+
 
 </script>
