@@ -202,3 +202,4 @@ var APP = null;
 jQuery(function () {
     APP = app();
 });
+
