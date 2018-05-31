@@ -2,6 +2,10 @@
 
 <head>
     <link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"/>
+    <link href="{{=URL('static','css/form.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
     <script>
         var memo_url = "{{=URL('api', 'get_memos')}}";
         var add_memo_url = "{{=URL('api', 'add_memo', user_signature=True)}}";
@@ -22,20 +26,20 @@
     {{if auth.user is not None:}}
 
         <div class="button_bar">
-            <button v-if="!is_adding_memo" class="btn" v-on:click="add_memo_button()" :disabled="!logged_in"
+            <button v-if="!is_adding_memo" class="ui button" v-on:click="add_memo_button()" :disabled="!logged_in"
                     v-bind:class="{'disabled': !logged_in}">
                 <!-- 'disabled' html attribute will be T/F based on !logged_in -->
                 <!-- 'disabled' class will appear based on T/F of !logged_in -->
                 <i class="fa fa-plus"></i> Add Meal Event
             </button>
-            <button v-if="is_adding_memo" class="btn" v-on:click="add_memo_button()">
+            <button v-if="is_adding_memo" class="small ui button" v-on:click="add_memo_button()">
                 <i class="fa fa-times"></i> Cancel
             </button>
         </div>
 
         <!-------------------------------- ADD FORM -------------------------------->
         <div v-if="is_adding_memo" id="add_memo_div">
-            <form action="#" v-on:submit.prevent="add_memo" class="form-horizontal" enctype="multipart/form-data"
+            <form action="#" v-on:submit.prevent="add_memo" class="form-horizontal ui form" enctype="multipart/form-data"
                   method="post">
                 <div class="form-group  " id="no_table_title__row">
                     <div>
@@ -54,7 +58,7 @@
                 <div class="form-group" id="no_table_datetime__row">
                     <div>
                         <input class="form-control string" id="no_table_emo" v-model="form_datetime"
-                               placeholder="Date and Time" type="text"/>
+                               placeholder="Date and Time" type="date"/>
                         <span class="help-block"></span>
                     </div>
                 </div>
@@ -75,13 +79,13 @@
 
                 <div class="form-group" id="submit_record__row">
                     <div>
-                        <input class="btn btn-primary" id="add_memo_submit" type="submit" value="Submit"/>
+                        <input class="small ui button" id="add_memo_submit" type="submit" value="Submit"/>
                     </div>
                 </div>
             </form>
         </div>
 
-        <div v-for="m in memolist" class="memo">
+        <div v-for="m in memolist" class="ui raised segment memo">
             <div v-if="!m.is_being_edited" class="memo_text">
                 <div class="memo_title">${m.title}</div>
                 <div class="memo_content">${m.memo}</div>
@@ -113,7 +117,7 @@
                         <div class="form-group" id="no_table_datetime__row">
                             <div>
                                 <input class="form-control string" id="no_table_emo" v-model="form_edit_datetime"
-                                       placeholder="Date and Time" type="text"/>
+                                       placeholder="Date and Time" type="date"/>
                                 <span class="help-block"></span>
                             </div>
                         </div>
@@ -177,10 +181,10 @@
         <p class="explanation center">New to the city? Sign up for GrubMeet and have a meal
             with strangers who might turn into friends!</p>
         <div class="login_button center">
-            <a href="{{=URL('default', 'user')}}" class="btn">Login</a>
+            <a href="{{=URL('default', 'user')}}" class="small ui button">Login</a>
         </div>
         <h4 class="center">Open Meal Events</h4>
-        <div v-for="m in memolist" class="memo">
+        <div v-for="m in memolist" class="ui raised segment memo">
             <div class="memo_text">
                 <div class="memo_title">${m.title}</div>
                 <div class="memo_content">${m.memo}</div>

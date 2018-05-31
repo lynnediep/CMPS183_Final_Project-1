@@ -113,3 +113,14 @@ CREATE TABLE "web2py_session_CMPS183_Final_Project"(
     "session_data" BLOB
 );
 success!
+timestamp: 2018-05-24T13:51:50.690714
+CREATE TABLE "web2py_session_CMPS183_Final_Project"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "locked" CHAR(1),
+    "client_ip" CHAR(64),
+    "created_datetime" TIMESTAMP,
+    "modified_datetime" TIMESTAMP,
+    "unique_key" CHAR(64),
+    "session_data" BLOB
+);
+success!
