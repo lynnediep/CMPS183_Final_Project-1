@@ -124,3 +124,8 @@ CREATE TABLE "web2py_session_CMPS183_Final_Project"(
     "session_data" BLOB
 );
 success!
+success!
+success!
+timestamp: 2018-05-31T15:55:26.095702
+ALTER TABLE "checklist" ADD "time_of_event" TEXT;
+success!

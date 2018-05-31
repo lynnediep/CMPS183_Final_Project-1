@@ -18,10 +18,11 @@ db.define_table('checklist',
                 Field('title'),
                 Field('memo', 'text'),
                 Field('datetime', 'text'),
+                Field('time_of_event', 'text'),
                 Field('area', 'text'),
                 Field('allergens', 'text'),
                 Field('updated_on', 'datetime', update=datetime.datetime.utcnow()),
-                Field('is_public', 'boolean', default = False)
+                Field('is_public', 'boolean', default=False)
                 )
 
 # after defining tables, uncomment below to enable auditing
