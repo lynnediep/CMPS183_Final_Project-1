@@ -98,6 +98,11 @@
                     <i class="spoon icon"></i> Your Event
                 </div>
             </div>
+              <div v-if="!(m.user_email === '{{=auth.user.email}}')">
+                <div class="ui red ribbon label">
+                    <i class="food icon"></i> Open Event
+                </div>
+            </div>
             <br/>
             <div v-if="!m.is_being_edited" class="memo_text">
                 <div class="memo_name">${m.first_name}'s Event:</div>
@@ -204,11 +209,14 @@
         <p class="explanation center">New to the city? Sign up for GrubMeet and have a meal
             with strangers who might turn into friends!</p>
         <div class="login_button center">
-            <a href="{{=URL('default', 'user')}}" class="small ui button">Login</a>
+            <a href="{{=URL('default', 'user')}}" class="small blue ui button">Login</a>
         </div>
         <h4 class="center">Open Meal Events</h4>
         <div v-for="m in memolist" class="ui raised segment memo">
             <div class="memo_text">
+                <div class="ui orange ribbon label">
+                    <i class="food icon"></i>Let's Eat!
+                </div>
                 <div class="memo_name">${m.first_name}'s Event:</div>
                 <div class="memo_title">${m.title}</div>
                 <div class="memo_content">${m.memo}</div>
