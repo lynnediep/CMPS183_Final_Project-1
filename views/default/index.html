@@ -125,7 +125,7 @@
 
                 <!-------------------------------- EDIT FORM -------------------------------->
                 <div v-if="m.is_being_edited" v-on:submit.prevent="edit_memo(m._idx)" id="edit_memo_div">
-                    <form action="#" class="form-horizontal"
+                    <form action="#" class="form-horizontal ui form"
                           enctype="multipart/form-data"
                           method="post">
                         <div class="form-group" id="no_table_title__row">
@@ -174,8 +174,8 @@
 
                         <div class="form-group" id="edit_save_cancel">
                             <div>
-                                <input class="btn btn-primary" id="edit_memo_save" type="submit" value="Save"/>
-                                <input class="btn btn-primary" id="edit_memo_cancel" type="reset" value="Cancel"
+                                <input class=" btn rounded btn-primary" id="edit_memo_save" type="submit" value="Save"/>
+                                <input class=" btn rounded btn-primary" id="edit_memo_cancel" type="reset" value="Cancel"
                                        v-on:click="m.is_being_edited = false"/>
                             </div>
                         </div>
@@ -217,9 +217,9 @@
         <p class="explanation center">New to the city? Sign up for GrubMeet and have a meal
             with strangers who might turn into friends!</p>
         <div class="login_button center">
-            <a href="{{=URL('default', 'user')}}" class="small blue ui button">Login</a>
+            <a href="{{=URL('default', 'user')}}" class="medium blue ui button">Get Grubbin'</a>
         </div>
-        <h4 class="center">Open Meal Events</h4>
+        <h2 class="center">Open Meal Events</h2>
         <div v-for="m in memolist" class="ui raised segment memo">
             <div class="memo_text">
                 <div class="ui orange ribbon label">
@@ -246,6 +246,8 @@
                 <i class="fa fa-ellipsis-h"></i> Load More
             </button>
         </div>
+
+        <br/>
 
     {{pass}}
     </div>
