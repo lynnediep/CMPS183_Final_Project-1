@@ -43,6 +43,10 @@ def preferences():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
+def picture_gallery():
+    response.flash = T("Hello World")
+    return dict(message=T('Welcome to web2py!'))
+
 def user():
     """
     exposes:
