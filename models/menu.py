@@ -54,8 +54,12 @@ def _():
          #   (T('Entry1'), False, URL('default', 'entry1')),
           #  (T('Entry2'), False, URL('default', 'entry2')),
         #]),
-        (T('Pictures of Events'), False, URL('default', 'picture_gallery'))
+        (T('Pictures of Events'), False, URL('default', 'picture_gallery')),
+        (T('Calendar'), False, URL('default', 'calendar'))
+
+
     ]
+
 
 
 if DEVELOPMENT_MENU:

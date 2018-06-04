@@ -112,6 +112,12 @@
                 </div>
             </div>
             <br/>
+            <!---WHEN USER CLICKS JOIN, ADD TO CALENDAR? AND TO USER'S CALENDAR PAGE ----->
+            <button v-if="!(m.user_email === '{{=auth.user.email}}')" class ="right ui labeled icon button">
+                <i class="calendar icon"></i>
+                    Add To Calendar
+            </button>
+
             <div v-if="!m.is_being_edited" class="memo_text">
                 <div class="memo_name">${m.first_name}'s Event:</div>
                 <div class="memo_title">${m.title}</div>
@@ -120,7 +126,10 @@
                 <div class="memo_time_of_event">Time: ${m.time_of_event}</div>
                 <div class="memo_area">Where: ${m.area}</div>
                 <div class="memo_allergens">Allergen Info: ${m.allergens}</div>
+
             </div>
+
+
             <div>
 
                 <!-------------------------------- EDIT FORM -------------------------------->
