@@ -58,6 +58,10 @@
     cursor: pointer;
 }
 
+#public-events{
+    height:100%;
+}
+
 @media screen and (max-width: 640px) {
     #ht1 {
         font-size: 42px;

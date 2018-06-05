@@ -2,6 +2,10 @@
 <head>
     <link href="{{=URL('static','css/home.css')}}" rel="stylesheet" type="text/css"/>
 
+    <script>
+        var memo_url = "{{=URL('api', 'get_memos')}}";
+    </script>
+
 </head>
 <div id="home-header">
     <img id="home-top-img" class="ui fluid image" src="{{=URL('static','images/home-top.jpg')}}">
@@ -21,9 +25,28 @@
     </div>
 
     <div id="home-top-arrow-text">Let's Get Grubbin'</div>
-    <div id="home-top-arrow"><i class="white angle down icon" style="transform: translate(-50%, -50%);"></i></div>
+    <div id="home-top-arrow" onclick="showPublicEvents()"><i class="white angle down icon" style="transform: translate(-50%, -50%);"></i></div>
 </div>
 
+<div id="public-events" class="display:none">
+    <div v-for="m in memolist" class="ui raised segment memo">
+        <!---WHEN USER CLICKS JOIN, ADD TO CALENDAR? AND TO USER'S CALENDAR PAGE ----->
+        <div class="memo_name">${m.first_name}'s Event:</div>
+        <div class="memo_title">${m.title}</div>
+        <div class="memo_content">${m.memo}</div>
+        <div class="memo_datetime">When: ${m.datetime}</div>
+        <div class="memo_time_of_event">Time: ${m.time_of_event}</div>
+        <div class="memo_area">Where: ${m.area}</div>
+        <div class="memo_allergens">Allergen Info: ${m.allergens}</div>
+    </div>
+    <div v-if="has_more" class="show_more">
+        <button class="btn btn-default rounded" v-on:click="get_more()">
+            <i class="fa fa-ellipsis-h"></i> Load More
+        </button>
+    </div>
+</div>
 
-<script>
-</script>
+<script src="{{=URL('static','js/default/home.js')}}"></script>
+<script src="{{=URL('static','js/vue.js')}}"></script>
+
+

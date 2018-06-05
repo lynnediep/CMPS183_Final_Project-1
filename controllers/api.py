@@ -53,7 +53,7 @@ def get_memos():
         else:
             has_more = True
     logged_in = auth.user is not None
-
+    
     # below are data paramters when getJSON is called
     return response.json(dict(
         memolist=memolist,
