@@ -34,6 +34,7 @@ def get_memos():
         # check if there is 1 more item
         name = get_user_name_from_email(r.user_email)
         if i < end_idx - start_idx:
+            print r.time_of_event
             t = dict(
                 id=r.id,
                 user_email=r.user_email,
@@ -52,7 +53,7 @@ def get_memos():
         else:
             has_more = True
     logged_in = auth.user is not None
-
+    
     # below are data paramters when getJSON is called
     return response.json(dict(
         memolist=memolist,
