@@ -3,10 +3,26 @@
     <link href="{{=URL('static','css/home.css')}}" rel="stylesheet" type="text/css"/>
 
 </head>
-<div>messages</div>
+<div id="home-header">
+    <img id="home-top-img" class="ui fluid image" src="{{=URL('static','images/home-top.jpg')}}">
+    <div id="home-title">
+        <div id="ht1">GRUBMEET</div>
+        <div id="ht2">New to the city? Sign up for GrubMeet and have a meal with strangers who might turn into
+            friends!
+        </div>
+    </div>
+    <div id="home-top-arrow-text">Find Meals Now!</div>
+    <div id="home-top-arrow"><i class="white angle down icon" style="transform: translate(-50%, -50%);"></i></div>
+    <div id="home-top-btn">
+        <a href="{{=URL('default', 'user/')}}">
+            <button class="ui inverted button">Sign In</button>
+        </a>
+        <a href="{{=URL('default', 'user/register')}}">
+            <button class="ui inverted button">Sign Up</button>
+        </a>
+    </div>
+</div>
 
 
 <script>
-    $('#messages_tab').addClass("active");
-
 </script>
