@@ -8,6 +8,10 @@
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
 
+def home():
+    response.flash = T("Hello World")
+    return dict(message=T('Welcome to web2py!'))
+
 def index():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))

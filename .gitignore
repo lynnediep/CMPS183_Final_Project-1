@@ -1,3 +1,6 @@
 .idea/
 .DS_Store
 applications/*/errors/*
+applications/*/databases/*
+applications/*/sessions/*
+applications/*/cache/*
