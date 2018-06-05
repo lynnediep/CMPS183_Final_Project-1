@@ -1,0 +1,36 @@
+{{extend 'layout.html'}}
+    <link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"/>
+    <link href="{{=URL('static','css/form.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+
+<div class="main_content">
+
+    <h1 class="ui center aligned icon header">
+        <br/>
+        <i class="circular utensils icon"></i>
+        Pictures of GrubMeet
+    </h1>
+
+    <h5 class="ui center aligned">Share pictures of all the fun you're having!</h5>
+
+    <div class="ui  aligned   grid container">
+        <div class="ui fluid segment">
+            <input type="file" (change)="fileEvent($event)" class="inputfile" id="embedpollfileinput" v-on:change="upload_file" />
+            <label for="embedpollfileinput" class="ui blue right floated button">
+            <i class="ui upload icon"></i>
+                Upload image
+            </label>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+
+<script src="{{=URL('static','js/default_index.js')}}"></script>

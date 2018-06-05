@@ -102,3 +102,30 @@ ALTER TABLE "checklist" ADD "area" TEXT;
 timestamp: 2018-05-18T01:00:41.144671
 ALTER TABLE "checklist" ADD "datetime" TEXT;
 success!
+timestamp: 2018-05-18T12:02:07.110175
+CREATE TABLE "web2py_session_CMPS183_Final_Project"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "locked" CHAR(1),
+    "client_ip" CHAR(64),
+    "created_datetime" TIMESTAMP,
+    "modified_datetime" TIMESTAMP,
+    "unique_key" CHAR(64),
+    "session_data" BLOB
+);
+success!
+timestamp: 2018-05-24T13:51:50.690714
+CREATE TABLE "web2py_session_CMPS183_Final_Project"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "locked" CHAR(1),
+    "client_ip" CHAR(64),
+    "created_datetime" TIMESTAMP,
+    "modified_datetime" TIMESTAMP,
+    "unique_key" CHAR(64),
+    "session_data" BLOB
+);
+success!
+success!
+success!
+timestamp: 2018-05-31T15:55:26.095702
+ALTER TABLE "checklist" ADD "time_of_event" TEXT;
+success!

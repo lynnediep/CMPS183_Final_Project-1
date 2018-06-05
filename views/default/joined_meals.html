@@ -6,22 +6,12 @@
 
 <div class="main_content">
 
+    List of events user has joined goes here
+
     <h1 class="ui center aligned icon header">
         <br/>
-        <i class="circular calendar icon"></i>
-        Calendar of Meals
+        <i class="circular utensils icon"></i>
+        Events You've Joined
     </h1>
 
-    {{if auth.user is None:}}
-    <h2 class="center">Log in to see your calendar of upcoming meals!</h2>
-    {{pass}}
-
-    This is where the calendar would go
 </div>
-
-
-
-
-
-
-<script src="{{=URL('static','js/default_index.js')}}"></script>

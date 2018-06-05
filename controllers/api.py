@@ -3,6 +3,16 @@ import time
 
 
 # Mocks implementation.
+
+def get_user_name_from_email(email):
+    """Returns a string corresponding to the user first and last names,
+    given the user email."""
+    u = db(db.auth_user.email == email).select().first()
+    if u is None:
+        return 'None'
+    else:
+        return ' '.join([u.first_name, u.last_name])
+
 def get_memos():
     start_idx = int(request.vars.start_idx) if request.vars.start_idx is not None else 0
     end_idx = int(request.vars.end_idx) if request.vars.end_idx is not None else 0
@@ -22,16 +32,21 @@ def get_memos():
     # enumerate automatically assigns an index i to item r
     for i, r in enumerate(rows):
         # check if there is 1 more item
-
+        name = get_user_name_from_email(r.user_email)
         if i < end_idx - start_idx:
             t = dict(
                 id=r.id,
                 user_email=r.user_email,
                 title=r.title,
                 memo=r.memo,
+                datetime=r.datetime,
+                area=r.area,
+                time_of_event=r.time_of_event,
+                allergens=r.allergens,
                 time=r.updated_on,
                 is_public=r.is_public,
                 is_being_edited=False,
+                first_name=name,
             )
             memolist.append(t)
         else:
@@ -51,7 +66,11 @@ def add_memo():
     t_id = db.checklist.insert(
         # paramters synchronous with post request in add_memo JS function
         title=request.vars.title,
-        memo=request.vars.memo
+        memo=request.vars.memo,
+        datetime=request.vars.datetime,
+        area=request.vars.area,
+        allergens=request.vars.allergens,
+        time_of_event=request.vars.time_of_event,
     )
     t = db.checklist(t_id)
     # to make edit work right after adding a memo
@@ -73,7 +92,11 @@ def edit_memo():
 
     t_id = row.update_record(
         title=request.vars.title,
-        memo=request.vars.memo
+        memo=request.vars.memo,
+        datetime=request.vars.datetime,
+        area=request.vars.area,
+        allergens=request.vars.allergens,
+        time_of_event=request.vars.time_of_event,
     )
 
     print('done')

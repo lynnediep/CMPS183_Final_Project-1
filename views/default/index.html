@@ -2,6 +2,10 @@
 
 <head>
     <link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"/>
+    <link href="{{=URL('static','css/form.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
     <script>
         var memo_url = "{{=URL('api', 'get_memos')}}";
         var add_memo_url = "{{=URL('api', 'add_memo', user_signature=True)}}";
@@ -20,22 +24,27 @@
     <div id="vue-div" class="display:none">
 
     {{if auth.user is not None:}}
+        <br/>
 
         <div class="button_bar">
-            <button v-if="!is_adding_memo" class="btn" v-on:click="add_memo_button()" :disabled="!logged_in"
+            <button v-if="!is_adding_memo" class="ui teal center button" v-on:click="add_memo_button()" :disabled="!logged_in"
                     v-bind:class="{'disabled': !logged_in}">
                 <!-- 'disabled' html attribute will be T/F based on !logged_in -->
                 <!-- 'disabled' class will appear based on T/F of !logged_in -->
                 <i class="fa fa-plus"></i> Add Meal Event
             </button>
-            <button v-if="is_adding_memo" class="btn" v-on:click="add_memo_button()">
+            <button v-if="is_adding_memo" class="small ui button" v-on:click="add_memo_button()">
                 <i class="fa fa-times"></i> Cancel
             </button>
+
         </div>
+
+        <br/>
 
         <!-------------------------------- ADD FORM -------------------------------->
         <div v-if="is_adding_memo" id="add_memo_div">
-            <form action="#" v-on:submit.prevent="add_memo" class="form-horizontal" enctype="multipart/form-data"
+            <h5>Fill in the info for your event!</h5>
+            <form action="#" v-on:submit.prevent="add_memo" class="form-horizontal ui form" enctype="multipart/form-data"
                   method="post">
                 <div class="form-group  " id="no_table_title__row">
                     <div>
@@ -54,10 +63,17 @@
                 <div class="form-group" id="no_table_datetime__row">
                     <div>
                         <input class="form-control string" id="no_table_emo" v-model="form_datetime"
-                               placeholder="Date and Time" type="text"/>
+                               placeholder="Date and Time" type="date"/>
                         <span class="help-block"></span>
                     </div>
                 </div>
+                 <div class="form-group" id="no_table_time_of_event__row">
+                            <div>
+                                <input class="form-control string" id="no_table_emo" v-model="form_time_of_event"
+                                       placeholder="Time of Event" type="time"/>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
                 <div class="form-group" id="no_table_area__row">
                     <div>
                         <input class="form-control string" id="no_table_emo" v-model="form_area"
@@ -73,27 +89,52 @@
                     </div>
                 </div>
 
+                <br/>
+
                 <div class="form-group" id="submit_record__row">
                     <div>
-                        <input class="btn btn-primary" id="add_memo_submit" type="submit" value="Submit"/>
+                        <input class="small ui button " id="add_memo_submit" type="submit"
+                               value="Let's Eat!"/>
                     </div>
                 </div>
             </form>
         </div>
 
-        <div v-for="m in memolist" class="memo">
+        <div v-for="m in memolist" class="ui raised segment memo">
+             <div v-if="(m.user_email === '{{=auth.user.email}}')">
+                <div class="ui blue ribbon label">
+                    <i class="spoon icon"></i> Your Event
+                </div>
+            </div>
+              <div v-if="!(m.user_email === '{{=auth.user.email}}')">
+                <div class="ui red ribbon label">
+                    <i class="food icon"></i> Open Event
+                </div>
+            </div>
+            <br/>
+            <!---WHEN USER CLICKS JOIN, ADD TO CALENDAR? AND TO USER'S CALENDAR PAGE ----->
+            <button v-if="!(m.user_email === '{{=auth.user.email}}')" class ="right ui labeled icon button">
+                <i class="calendar icon"></i>
+                    Add To Calendar
+            </button>
+
             <div v-if="!m.is_being_edited" class="memo_text">
+                <div class="memo_name">${m.first_name}'s Event:</div>
                 <div class="memo_title">${m.title}</div>
                 <div class="memo_content">${m.memo}</div>
-                <div class="memo_datetime">${m.datetime}</div>
-                <div class="memo_area">${m.area}</div>
-                <div class="memo_allergens">${m.allergens}</div>
+                <div class="memo_datetime">When: ${m.datetime}</div>
+                <div class="memo_time_of_event">Time: ${m.time_of_event}</div>
+                <div class="memo_area">Where: ${m.area}</div>
+                <div class="memo_allergens">Allergen Info: ${m.allergens}</div>
+
             </div>
+
+
             <div>
 
                 <!-------------------------------- EDIT FORM -------------------------------->
                 <div v-if="m.is_being_edited" v-on:submit.prevent="edit_memo(m._idx)" id="edit_memo_div">
-                    <form action="#" class="form-horizontal"
+                    <form action="#" class="form-horizontal ui form"
                           enctype="multipart/form-data"
                           method="post">
                         <div class="form-group" id="no_table_title__row">
@@ -113,7 +154,14 @@
                         <div class="form-group" id="no_table_datetime__row">
                             <div>
                                 <input class="form-control string" id="no_table_emo" v-model="form_edit_datetime"
-                                       placeholder="Date and Time" type="text"/>
+                                       placeholder="Date and Time" type="date"/>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                         <div class="form-group" id="no_table_time_of_event__row">
+                            <div>
+                                <input class="form-control string" id="no_table_emo" v-model="form_edit_time_of_event"
+                                       placeholder="Time of Event" type="time"/>
                                 <span class="help-block"></span>
                             </div>
                         </div>
@@ -124,6 +172,7 @@
                                 <span class="help-block"></span>
                             </div>
                         </div>
+
                         <div class="form-group" id="no_table_allergens__row">
                             <div>
                                 <input class="form-control string" id="no_table_emo" v-model="form_edit_allergens"
@@ -134,8 +183,8 @@
 
                         <div class="form-group" id="edit_save_cancel">
                             <div>
-                                <input class="btn btn-primary" id="edit_memo_save" type="submit" value="Save"/>
-                                <input class="btn btn-primary" id="edit_memo_cancel" type="reset" value="Cancel"
+                                <input class=" btn rounded btn-primary" id="edit_memo_save" type="submit" value="Save"/>
+                                <input class=" btn rounded btn-primary" id="edit_memo_cancel" type="reset" value="Cancel"
                                        v-on:click="m.is_being_edited = false"/>
                             </div>
                         </div>
@@ -145,7 +194,7 @@
 
                 <div v-if="!m.is_being_edited" class="button_list">
                     <div class="buttons">
-                        <a v-if="(m.is_public) && (m.user_email === '{{=auth.user.email}}')" class="btn rounded"
+                   <!--     <a v-if="(m.is_public) && (m.user_email === '{{=auth.user.email}}')" class="btn rounded"
                            v-on:click="toggle_visibility(m._idx)">
                             <i class="fa fa-users"></i>
                         </a>
@@ -154,7 +203,7 @@
                             <i class="fa fa-user"></i>
                         </a>
                         <i v-if="(m.is_public) && (m.user_email !== '{{=auth.user.email}}')"
-                           class="fa fa-users"></i>
+                           class="fa fa-users"></i> -->
                         <a v-if="m.user_email === '{{=auth.user.email}}'" class="btn rounded"
                            v-on:click="init_edit_memo(m._idx)">
                             <i class="fa fa-edit fa-lg"></i>
@@ -177,23 +226,28 @@
         <p class="explanation center">New to the city? Sign up for GrubMeet and have a meal
             with strangers who might turn into friends!</p>
         <div class="login_button center">
-            <a href="{{=URL('default', 'user')}}" class="btn">Login</a>
+            <a href="{{=URL('default', 'user')}}" class="medium blue ui button">Get Grubbin'</a>
         </div>
-        <h4 class="center">Open Meal Events</h4>
-        <div v-for="m in memolist" class="memo">
+        <h2 class="center">Open Meal Events</h2>
+        <div v-for="m in memolist" class="ui raised segment memo">
             <div class="memo_text">
+                <div class="ui orange ribbon label">
+                    <i class="food icon"></i>Let's Eat!
+                </div>
+                <div class="memo_name">${m.first_name}'s Event:</div>
                 <div class="memo_title">${m.title}</div>
                 <div class="memo_content">${m.memo}</div>
-                <div class="memo_datetime">${m.datetime}</div>
-                <div class="memo_area">${m.area}</div>
-                <div class="memo_allergens">${m.allergens}</div>
+                <div class="memo_datetime">When: ${m.datetime}</div>
+                <div class="memo_time_of_event">Time: ${m.time_of_event}</div>
+                <div class="memo_area">Where: ${m.area}</div>
+                <div class="memo_allergens">Allergen Info: ${m.allergens}</div>
             </div>
             <div>
-                <div class="button_list">
+               <!-- <div class="button_list">
                     <div class="buttons">
                         <i class="fa fa-users"></i>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div v-if="has_more" class="show_more">
@@ -201,6 +255,8 @@
                 <i class="fa fa-ellipsis-h"></i> Load More
             </button>
         </div>
+
+        <br/>
 
     {{pass}}
     </div>
