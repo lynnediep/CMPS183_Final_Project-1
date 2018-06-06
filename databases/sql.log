@@ -78,3 +78,14 @@ CREATE TABLE "checklist"(
     "is_public" CHAR(1)
 );
 success!
+timestamp: 2018-06-05T14:16:28.947454
+CREATE TABLE "web2py_session_CMPS183_Final_Project"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "locked" CHAR(1),
+    "client_ip" CHAR(64),
+    "created_datetime" TIMESTAMP,
+    "modified_datetime" TIMESTAMP,
+    "unique_key" CHAR(64),
+    "session_data" BLOB
+);
+success!

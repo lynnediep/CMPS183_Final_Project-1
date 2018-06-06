@@ -4,28 +4,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"/>
     <link href="{{=URL('static','css/form.css')}}" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<br/>
 
-<h2 class="center">
+<h1 class="ui center aligned icon header">
+   <i class="circular utensils icon"></i>
 {{=T('Sign Up') if request.args(0) == 'register' else T('Log In') if request.args(0) == 'login' else T(request.args(0).replace('_',' ').title())}}
-</h2>
 
-<div class="container">
-    <div class="row">
-        <div id="ui form" class="col-lg-6">
+</h1>
+<br/>
+<br/>
+
+<div class=" ui two column center aligned stackable grid">
+    
+    <br/>
+
+
+    <div class="column">
+        <div id="ui form" class="ui large form">
+            <div class="ui stacked segment">
+
         {{
         if request.args(0)=='login':
             if not 'register' in auth.settings.actions_disabled:
-                form.add_button(T('Sign Up'),URL(args='register', vars={'_next': request.vars._next} if request.vars._next else None),_class='btn btn-default')
+                form.add_button(T('Sign Up'),URL(args='register', vars={'_next': request.vars._next}
+            if request.vars._next else None),_class='btn btn-primary',)
             pass
             if not 'request_reset_password' in auth.settings.actions_disabled:
-                form.add_button(T('Lost Password'),URL(args='request_reset_password'),_class='btn btn-default')
+                form.add_button(T('Lost Password'),URL(args='request_reset_password'),_class='btn btn-primary')
             pass
         pass
         =form
         }}
+                </div>
         </div>
     </div>
 </div>
+
 
 
 {{block page_js}}

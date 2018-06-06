@@ -29,6 +29,7 @@ response.google_analytics_id = None
 # ----------------------------------------------------------------------------------------------------------------------
 
 response.menu = [
+    # (T('Splash'), False, URL('default', 'home'), []),
     (T('Home'), False, URL('default', 'index'), [])
 ]
 
@@ -67,3 +68,5 @@ if DEVELOPMENT_MENU:
 
 if "auth" in locals():
     auth.wikimenu()
+
+
