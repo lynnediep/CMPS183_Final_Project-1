@@ -5,5 +5,3 @@ applications/*/databases/*
 applications/*/sessions/*
 applications/*/cache/*
 applications/*/sessions/*
-
-databases/storage\.sqlite
