@@ -1,113 +1,69 @@
 {{extend 'default/sidebar.html'}}
+
 <head>
-    <link href="{{=URL('static','css/explore.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
+
+    <script>
+        var memo_url = "{{=URL('explore', 'get_memos', user_signature=True)}}";
+    </script>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+        .ui.ribbon{
+            margin-left: 13px !important;
+        }
+    </style>
 </head>
-<div id="explore-body">
-    <div id="explore-search">
-        <div class="ui icon input">
-            <input type="text" placeholder="Search...">
-            <i class="search icon"></i>
+
+
+<div class="main_content">
+    <div id="explore-div" class="hidden">
+
+    {{if auth.user is not None:}}
+        <!-- meal view-->
+        <div id="my-meals-card" class="ui special cards">
+            <div v-for="m in memolist" class="card">
+                <div v-if="(m.user_email === '{{=auth.user.email}}')">
+                    <div class="ui blue ribbon label">
+                        <i class="spoon icon"></i> Your Event
+                    </div>
+                </div>
+                <div v-if="!(m.user_email === '{{=auth.user.email}}')">
+                    <div class="ui red ribbon label">
+                        <i class="food icon"></i> Open Event
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="https://image.flaticon.com/icons/svg/214/214298.svg">
+                </div>
+                <div v-if="!m.is_being_edited" class="content">
+                    <div class="header">${m.title}</div>
+                    <div class="description">${m.memo}</div>
+                </div>
+                <div v-if="!m.is_being_edited" class="extra content">
+                    <div><i class="users icon"></i>2 out of 8 People Joined</div>
+                    <div>
+                        <i class="clock outline icon"></i>${m.time_of_event}
+                        <i class="calendar alternate outline icon"></i>${m.datetime}
+                    </div>
+                    <div><i class="map marker alternate icon"></i>${m.area}</div>
+                    <div><i class="exclamation circle icon"></i>${m.allergens}</div>
+                </div>
+            </div>
         </div>
+
+        <div v-if="has_more" class="show_more">
+            <button class="btn btn-default rounded" v-on:click="get_more()">
+                <i class="fa fa-ellipsis-h"></i> Load More
+            </button>
+        </div>
+
     </div>
-    <div class="ui special cards">
-        <div class="card">
-            <div class="blurring dimmable image">
-                <div class="ui dimmer">
-                    <div class="content">
-                        <div class="center">
-                            <div class="ui inverted button" onclick="more_detail_modal()">More Details</div>
-                        </div>
-                    </div>
-                </div>
-
-                <img src="https://image.flaticon.com/icons/svg/214/214298.svg">
-            </div>
-            <div class="content">
-                <div class="header">Donut Party</div>
-                <div class="meta">
-                    <div class="ui orange circular tiny labels">
-                        <a class="ui  label">Donuts</a>
-                        <a class="ui  label">Sweets </a>
-                        <a class="ui  label">Party </a>
-                    </div>
-                </div>
-            </div>
-            <div class="extra content">
-                <div><i class="users icon"></i>2 out of 8 People Joined</div>
-                <div><i class="map marker alternate icon"></i>Santa Cruz</div>
-                <div><i class="clock outline icon"></i>5/21/2018 6:00PM</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="blurring dimmable image">
-                <div class="ui dimmer">
-                    <div class="content">
-                        <div class="center">
-                            <div class="ui inverted button" onclick="more_detail_modal()">More Details</div>
-                        </div>
-                    </div>
-                </div>
-
-                <img src="https://image.flaticon.com/icons/svg/135/135578.svg">
-            </div>
-            <div class="content">
-                <div class="header">Cupcake</div>
-                <div class="meta">
-                    <div class="ui yellow circular tiny labels">
-                        <a class="ui  label">Cupcake</a>
-                    </div>
-                </div>
-            </div>
-            <div class="extra content">
-                <div><i class="users icon"></i>2 out of 8 People Joined</div>
-                <div><i class="map marker alternate icon"></i>Santa Cruz</div>
-                <div><i class="clock outline icon"></i>5/21/2018 6:00PM</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="blurring dimmable image">
-                <div class="ui dimmer">
-                    <div class="content">
-                        <div class="center">
-                            <div class="ui inverted button" onclick="more_detail_modal()">More Details</div>
-                        </div>
-                    </div>
-                </div>
-
-                <img src="https://image.flaticon.com/icons/svg/135/135715.svg">
-            </div>
-            <div class="content">
-                <div class="header">Vegetarian Dinner</div>
-                <div class="meta">
-                    <div class="ui green circular tiny labels">
-                        <a class="ui  label">Vegetarian</a>
-                        <a class="ui  label">Healthy </a>
-                        <a class="ui  label">Dinner </a>
-                    </div>
-                </div>
-            </div>
-            <div class="extra content">
-                <div><i class="users icon"></i>2 out of 8 People Joined</div>
-                <div><i class="map marker alternate icon"></i>Santa Cruz</div>
-                <div><i class="clock outline icon"></i>5/21/2018 6:00PM</div>
-            </div>
-        </div>
-    </div>
+{{pass}}
 </div>
 
-<div id="popup" class="ui modal">
-    <div class="header">Header</div>
-
-    <div class="scrolling content">
-        <p>Content goes here</p>
-    </div>
-    <div class="actions">
-        <div class="ui black deny button">
-            Close
-        </div>
-    </div>
-</div>
-
-
+<script>
+</script>
 <script src="{{=URL('static','js/default/explore.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/glidejs@2.1.0/dist/glide.min.js"></script>

@@ -24,27 +24,51 @@
         </div>
     </div>
 
-    <div id="home-top-arrow-text">Let's Get Grubbin'</div>
-    <div id="home-top-arrow" onclick="showPublicEvents()"><i class="white angle down icon" style="transform: translate(-50%, -50%);"></i></div>
+
+    <div id="home-top-arrow-container" style="cursor: pointer;" onclick="showPublicEvents()">
+        <div id="home-top-arrow-text">Let's Get Grubbin'</div>
+        <div id="home-top-arrow">
+            <i class="white angle down icon"></i></div>
+    </div>
 </div>
 
 <div id="public-events" class="display:none">
-    <div v-for="m in memolist" class="ui raised segment memo">
-        <!---WHEN USER CLICKS JOIN, ADD TO CALENDAR? AND TO USER'S CALENDAR PAGE ----->
-        <div class="memo_name">${m.first_name}'s Event:</div>
-        <div class="memo_title">${m.title}</div>
-        <div class="memo_content">${m.memo}</div>
-        <div class="memo_datetime">When: ${m.datetime}</div>
-        <div class="memo_time_of_event">Time: ${m.time_of_event}</div>
-        <div class="memo_area">Where: ${m.area}</div>
-        <div class="memo_allergens">Allergen Info: ${m.allergens}</div>
+    <h1 class="ui header" style="width:100%; text-align: center;">Join a meal to get started!</h1>
+    <div id="public-events-card" class="ui special cards">
+        <div v-for="m in memolist" class="card">
+            <div class="blurring dimmable image">
+                <div class="ui dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui inverted button" onclick="more_detail_modal()">More Details</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://image.flaticon.com/icons/svg/214/214298.svg">
+            </div>
+            <div class="content">
+                <div class="header">${m.title}</div>
+                <div class="meta">
+                    <span class="date">By ${m.first_name}</span>
+                </div>
+                <div class="description">${m.memo}</div>
+            </div>
+            <div class="extra content">
+                <div><i class="users icon"></i>2 out of 8 People Joined</div>
+                <div><i class="calendar alternate outline icon"></i>${m.time_of_event} ${m.datetime}</div>
+                <div><i class="map marker alternate icon"></i>${m.area}</div>
+                <div><i class="exclamation circle icon"></i>${m.allergens}</div>
+            </div>
+        </div>
     </div>
+
     <div v-if="has_more" class="show_more">
         <button class="btn btn-default rounded" v-on:click="get_more()">
             <i class="fa fa-ellipsis-h"></i> Load More
         </button>
     </div>
 </div>
+
 
 <script src="{{=URL('static','js/default/home.js')}}"></script>
 <script src="{{=URL('static','js/vue.js')}}"></script>

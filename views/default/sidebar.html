@@ -9,14 +9,14 @@
     <div id="logo" class="item">
         GRUBMEET
     </div>
-    <a class="item">
+    <a class="item" href="{{=URL('default', 'user', args='logout')}}">
         <img class="ui circular image" src="https://image.flaticon.com/icons/svg/145/145867.svg"
              style="background: white;">
         <div style="padding-top: 10px;">Sign Out</div>
     </a>
-    <a href="{{=URL('default', 'create_meal')}}" id="create_meal_tab" class="item">
-        <i class="plus icon"></i>
-        Create Meal
+    <a href="{{=URL('default', 'my_meals')}}" id="create_meal_tab" class="item">
+        <i class="user outline icon"></i>
+        My Meals
     </a>
     <a href="{{=URL('default', 'explore')}}" id="explore_tab" class="item">
         <i class="Search icon"></i>

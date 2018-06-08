@@ -1,7 +1,10 @@
 // This is the js for the default/home.html view.
 
 function showPublicEvents(){
-   $('#public-events')[0].scrollIntoView();
+   //$('#public-events')[0].scrollIntoView();
+     $('html, body').animate({
+        scrollTop: $("#public-events").offset().top
+    }, 1000);
 }
 
 

@@ -20,8 +20,7 @@ def get_memos():
     memolist = []
     has_more = False
     if auth.user is not None:
-        q = ((db.checklist.user_email == auth.user.email) | (
-                    (db.checklist.is_public == True) & (db.checklist.user_email != auth.user.email)))
+        q = (db.checklist.user_email == auth.user.email)
 
     else:
         q = db.checklist.is_public == True

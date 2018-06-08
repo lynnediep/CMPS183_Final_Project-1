@@ -20,9 +20,11 @@
 }
 
 #ht1 {
+    font-family: 'Anton', sans-serif;
     font-size: 8vw;
     padding-bottom: 8%;
     font-weight: bold;
+    color: white;
 }
 
 #ht2 {
@@ -38,28 +40,37 @@
     transform: translate(-50%, -50%);
 }
 
-#home-top-arrow-text {
+#home-top-btn .button{
+    margin-top:10px;
+    width:100px;
+}
+
+#home-top-arrow-container {
+    text-align: center;
     position: absolute;
-    top: 87%;
+    top: 90%;
     left: 50%;
-    color: white;
-    font-size: 18px;
-    font-weight:bold;
     transform: translate(-50%, -50%);
 }
 
+#home-top-arrow-text {
+    padding-bottom: 35px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 #home-top-arrow {
-    position: absolute;
-    top: 95%;
-    left: 50%;
     color: white;
     font-size: 42px;
     animation: bounce 2s infinite;
     cursor: pointer;
 }
 
-#public-events{
-    height:100%;
+#public-events {
+    padding: 10px;
+    height: 100%;
 }
 
 @media screen and (max-width: 640px) {

@@ -52,6 +52,12 @@ var app = function () {
     };
 
     self.add_memo_button = function () {
+        self.vue.form_title = null;
+        self.vue.form_memo = null;
+        self.vue.form_datetime = null;
+        self.vue.form_area = null;
+        self.vue.form_allergens = null;
+        self.vue.form_time_of_event = null;
         self.vue.is_adding_memo = !self.vue.is_adding_memo;
     };
 
@@ -71,7 +77,7 @@ var app = function () {
                 console.log(data.memo);
 
                 // enableElement allow button to be pressed multiple times
-                $.web2py.enableElement($("#add_memo_submit"));
+                //$.web2py.enableElement($("#add_memo_submit"));
                 // unshift adds to beginning of array
                 // data.memolist is from api/add_memo()
                 self.vue.memolist.unshift(data.memo);
@@ -163,7 +169,7 @@ var app = function () {
 
     // Complete as needed.
     self.vue = new Vue({
-        el: "#vue-div",
+        el: "#my-meals",
         delimiters: ['${', '}'],
         unsafeDelimiters: ['!{', '}'],
         data: {
@@ -198,8 +204,8 @@ var app = function () {
     });
 
     self.get_memos();
-    $('#vue-div').show();
-
+    $('.menu .item').tab();
+    $('#my-meals').removeClass('hidden');
     return self;
 };
 

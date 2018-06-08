@@ -12,14 +12,19 @@ def home():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
-def index():
-    response.flash = T("Hello World")
-    return dict(message=T('Welcome to web2py!'))
 
+@auth.requires_login()
+def index():
+    redirect(URL('default', 'home'))
+
+
+@auth.requires_login()
 def sidebar():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
+
+@auth.requires_login()
 def explore():
     """
     example action using the internationalization operator T and flash
@@ -31,29 +36,40 @@ def explore():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
-def create_meal():
+
+@auth.requires_login()
+def my_meals():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
+
+@auth.requires_login()
 def messages():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
+
+@auth.requires_login()
 def calendar():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
+
+@auth.requires_login()
 def preferences():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
+
 
 def picture_gallery():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
+
 def joined_meals():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
+
 
 def user():
     """
@@ -71,6 +87,11 @@ def user():
     to decorate functions that need access control
     also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
     """
+    auth.settings.login_next = URL('default', 'explore')
+    auth.settings.register_next = URL('default', 'my_meals')
+    auth.settings.logout_next = URL('default', 'home')
+
+
     return dict(form=auth())
 
 
@@ -91,5 +112,3 @@ def call():
     supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
     """
     return service()
-
-

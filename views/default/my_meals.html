@@ -1,0 +1,245 @@
+{{extend 'default/sidebar.html'}}
+
+<head>
+    <link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
+
+    <script>
+        var memo_url = "{{=URL('api', 'get_memos')}}";
+        var add_memo_url = "{{=URL('api', 'add_memo', user_signature=True)}}";
+        var del_memo_url = "{{=URL('api', 'del_memo', user_signature=True)}}";
+        // hash_vars=False disable signing after question mark
+        var edit_memo_url = "{{=URL('api', 'edit_memo', user_signature=True)}}";
+        var toggle_visibility_url = "{{=URL('api', 'toggle_visibility', user_signature=True)}}";
+    </script>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        #edit_memo_div {
+            padding: 15px 10px 0px 10px;
+        }
+
+        #submit_record__row .ui.button {
+            width: 100px;
+            margin-top: 10px;
+        }
+
+        #add_meal_btn {
+            background: #ff4a55;
+            color: white;
+        }
+
+        #my-meal-tabs.ui.secondary.menu .active.item {
+            color: #ff4a55;
+            background-color: rgba(0, 0, 0, 0);
+            border: 1px solid #ff4a55;
+        }
+    </style>
+</head>
+
+
+<div class="main_content">
+    <div id="my-meals" class="hidden">
+
+    {{if auth.user is not None:}}
+        <div class="button_bar">
+            <button v-if="!is_adding_memo" id="add_meal_btn" class="ui labeled icon button"
+                    v-on:click="add_memo_button()"
+                    :disabled="!logged_in"
+                    v-bind:class="{'disabled': !logged_in}">
+                <!-- 'disabled' html attribute will be T/F based on !logged_in -->
+                <!-- 'disabled' class will appear based on T/F of !logged_in -->
+                <i class="plus icon"></i>Add Meal Event
+            </button>
+        </div>
+        <br>
+        <!-------------------------------- ADD FORM -------------------------------->
+        <div v-if="is_adding_memo" id="add_memo_div" class="ui segment">
+            <h3 class="ui header" style="text-align: center;">Fill in the info for your event!</h3>
+            <form action="#" v-on:submit.prevent="add_memo" class="ui form"
+                  enctype="multipart/form-data"
+                  method="post">
+                <div class="field" id="no_table_title__row">
+                    <input id="no_table_title" v-model="form_title" placeholder="title" type="text"/>
+                </div>
+                <div class="field" id="no_table_memo__row">
+                    <input id="no_table_emo" v-model="form_memo" placeholder="description" type="text"/>
+                </div>
+                <div class="field">
+                    <div class="two fields">
+                        <div class="field" id="no_table_datetime__row">
+                            <input id="no_table_emo" v-model="form_datetime"
+                                   placeholder="Date and Time" type="date"/>
+                        </div>
+                        <div class="field" id="no_table_time_of_event__row">
+                            <input id="no_table_emo" v-model="form_time_of_event"
+                                   placeholder="Time of Event" type="time"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="field" id="no_table_area__row">
+                    <input id="no_table_emo" v-model="form_area" placeholder="Location" type="text"/>
+                </div>
+                <div class="field" id="no_table_allergens__row">
+                    <input id="no_table_emo" v-model="form_allergens"
+                           placeholder="Allergens (vegan, gluten-free, etc.)" type="text"/>
+                </div>
+                <div class="field" id="submit_record__row" style="text-align: right;">
+                    <input class="ui green basic button" type="submit" value="Let's Eat!"/>
+                    <button v-if="is_adding_memo" class="ui red basic button" v-on:click="add_memo_button()">
+                        <i class="fa fa-times"></i>Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+
+
+        <!-- meal view-->
+        <div id="my-meal-tabs" class="ui secondary menu">
+            <a class="ui active item" data-tab="meals-created">Events Created</a>
+            <a class="item" data-tab="meals-joined">Events Joined</a>
+        </div>
+        <div class="ui active tab" data-tab="meals-created">
+            <div v-if="memolist.length < 1">You have not created any meal events</div>
+            <div id="my-meals-card" class="ui special cards">
+                <div v-for="m in memolist" class="card">
+                    <div class="image">
+                        <img src="https://image.flaticon.com/icons/svg/214/214298.svg">
+                    </div>
+                    <div v-if="!m.is_being_edited" class="content">
+                        <div class="header">${m.title}</div>
+                        <div class="description">${m.memo}</div>
+                    </div>
+                    <div v-if="!m.is_being_edited" class="extra content">
+                        <div><i class="users icon"></i>2 out of 8 People Joined</div>
+                        <div>
+                            <i class="clock outline icon"></i>${m.time_of_event}
+                            <i class="calendar alternate outline icon"></i>${m.datetime}
+                        </div>
+                        <div><i class="map marker alternate icon"></i>${m.area}</div>
+                        <div><i class="exclamation circle icon"></i>${m.allergens}</div>
+                        <div v-if="!m.is_being_edited" class="button_list" style="padding-top: 10px;">
+                            <div class="ui two buttons">
+                                <button v-if="m.user_email === '{{=auth.user.email}}'"
+                                        class="ui basic green icon button"
+                                        v-on:click="init_edit_memo(m._idx)"><i class="edit outline icon"></i>
+                                </button>
+
+                                <button v-if="m.user_email === '{{=auth.user.email}}'" class="ui basic red icon button"
+                                        v-on:click="delete_memo(m._idx)"><i class="trash alternate outline icon"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <!-------------------------------- EDIT FORM -------------------------------->
+                        <div v-if="m.is_being_edited" v-on:submit.prevent="edit_memo(m._idx)" id="edit_memo_div">
+                            <form action="#" class="ui mini form"
+                                  enctype="multipart/form-data"
+                                  method="post">
+                                <div class="field" id="no_table_title__row">
+                                    <input id="no_table_title" v-model="form_edit_title"
+                                           placeholder="title" type="text"/>
+
+                                </div>
+                                <div class="field" id="no_table_memo__row">
+                                    <input id="no_table_emo" v-model="form_edit_memo"
+                                           placeholder="description" type="text"/>
+                                </div>
+                                <div class="field">
+                                    <div class="two fields">
+                                        <div class="field" id="no_table_datetime__row">
+                                            <input id="no_table_emo" v-model="form_edit_datetime"
+                                                   placeholder="Date and Time" type="date"/>
+                                        </div>
+                                        <div class="field" id="no_table_time_of_event__row">
+                                            <input id="no_table_emo" v-model="form_edit_time_of_event"
+                                                   placeholder="Time of Event" type="time"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field" id="no_table_area__row">
+                                    <input id="no_table_emo" v-model="form_edit_area"
+                                           placeholder="Location" type="text"/>
+                                </div>
+
+                                <div class="field" id="no_table_allergens__row">
+                                    <div>
+                                        <input id="no_table_emo" v-model="form_edit_allergens"
+                                               placeholder="Allergens (vegan, gluten-free, etc.)" type="text"/>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                                <div class="ui two buttons">
+                                    <button class="ui basic green icon button" id="edit_memo_save" type="submit"
+                                            style="width:50%;">
+                                        Save
+                                    </button>
+                                    <button v-on:click="m.is_being_edited = false" class="ui basic red icon button"
+                                            style="width:50%;" type="reset">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div v-if="has_more" class="show_more">
+                <button class="btn btn-default rounded" v-on:click="get_more()">
+                    <i class="fa fa-ellipsis-h"></i> Load More
+                </button>
+            </div>
+        </div>
+        <div class="ui tab" data-tab="meals-joined">
+            joined
+        </div>
+
+    </div>
+{{else:}}
+    <h1 class="main_title center">Welcome to GrubMeet!</h1>
+    <p class="explanation center">New to the city? Sign up for GrubMeet and have a meal
+        with strangers who might turn into friends!</p>
+    <div class="login_button center">
+        <a href="{{=URL('default', 'user')}}" class="medium blue ui button">Get Grubbin'</a>
+    </div>
+    <h2 class="center">Open Meal Events</h2>
+    <div v-for="m in memolist" class="ui raised segment memo">
+        <div class="memo_text">
+            <div class="ui orange ribbon label">
+                <i class="food icon"></i>Let's Eat!
+            </div>
+            <div class="memo_name">${m.first_name}'s Event:</div>
+            <div class="memo_title">${m.title}</div>
+            <div class="memo_content">${m.memo}</div>
+            <div class="memo_datetime">When: ${m.datetime}</div>
+            <div class="memo_time_of_event">Time: ${m.time_of_event}</div>
+            <div class="memo_area">Where: ${m.area}</div>
+            <div class="memo_allergens">Allergen Info: ${m.allergens}</div>
+        </div>
+        <div>
+            <!-- <div class="button_list">
+                 <div class="buttons">
+                     <i class="fa fa-users"></i>
+                 </div>
+             </div> -->
+        </div>
+    </div>
+    <div v-if="has_more" class="show_more">
+        <button class="btn btn-default rounded" v-on:click="get_more()">
+            <i class="fa fa-ellipsis-h"></i> Load More
+        </button>
+    </div>
+
+    <br/>
+
+{{pass}}
+</div>
+
+<script>
+    $('#create_meal_tab').addClass("active");
+</script>
+<script src="{{=URL('static','js/default_index.js')}}"></script>

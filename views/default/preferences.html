@@ -1,9 +1,63 @@
 {{extend 'default/sidebar.html'}}
 
-<div>preferences</div>
+<head>
+    <script>
+        var get_user_pref_url = "{{=URL('user_pref', 'get_user_pref', user_signature=True)}}";
+        var update_user_pref_url = "{{=URL('user_pref', 'update_user_pref', user_signature=True)}}";
+    </script>
+    <style>
+        .hidden {
+            display: none;
+        }
 
+        #user-pref-div {
+            margin: 5% 5% 0% 5%;
+        }
+
+        #user-pref-div .ui.segment {
+            cursor: pointer;
+        }
+
+        #user-pref-div .ui.segment:hover {
+            background-color: rgb(250, 250, 250);
+        }
+
+        .user-pref-btn{
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<div id="user-pref-div" class="hidden">
+    <div class="ui segment" style="margin-bottom: 0px">
+        <h3 class="ui header">My Preferences</h3>
+    </div>
+    <div v-if="!is_edit_user_name" v-on:click="user_pref_edit_toggle('name')">
+        <div class="ui segment">
+            <div><b>Name</b></div>
+            ${user_pref.first_name} ${user_pref.last_name}
+            <i class="pencil alternate icon"></i>
+        </div>
+    </div>
+    <div v-if="is_edit_user_name">
+        <div class="ui segment">
+            <div><b>Name</b></div>
+            <div class="ui input" placeholder="First Name">
+                <input v-model="user_pref.first_name" type=”text”>
+            </div>
+            <div class="ui input" placeholder="Last Name">
+                <input v-model="user_pref.last_name" type=”text”>
+            </div>
+            <div class="user-pref-btn">
+                <button class="ui green basic button" v-on:click="update_user_pref">Update</button>
+                <button class="ui red basic button" v-on:click="cancel_user_pref">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
-$('#preferences_tab').addClass("active");
-
+    $('#preferences_tab').addClass("active");
 </script>
+
+<script src="{{=URL('static','js/default/user_pref.js')}}"></script>
