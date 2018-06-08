@@ -7,7 +7,7 @@
 <head>
     <meta charset='utf-8' />
     <link href="{{=URL('static','fullcalendar/fullcalendar.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{=URL('static','fullcalendar/fullcalendar.print.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{=URL('static','fullcalendar/fullcalendar.print.min.css')}}" rel="stylesheet" media="print" type="text/css"/>
     <script src='/final2/static/fullcalendar/lib/moment.min.js'></script>
     <script src='/final2/static/fullcalendar/lib/jquery.min.js'></script>
     <script src='/final2/static/fullcalendar/fullcalendar.min.js'></script>
@@ -21,7 +21,7 @@
           header: {
             left: 'prev,next today',
             center: 'title',
-            right: 'month,listYear'
+            right: 'month,listYear,listWeek'
           },
 
           displayEventTime: false, // don't show the time column in list view
@@ -51,9 +51,11 @@
 
       body {
         margin: 40px 10px;
-        padding: 0;
+        padding: 5px;
+        padding-bottom: 10px;
         font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
         font-size: 14px;
+        overflow-x: hidden;
       }
 
       #loading {
@@ -84,18 +86,13 @@
     {{if auth.user is not None:}}
     <div id='loading'>loading...</div>
 
+    <!-- Calendar is placed here -->
     <div id='calendar'></div>
 
     {{else:}}
     <h2 class="center">Log in to see your calendar of upcoming meals!</h2>
+
     {{pass}}
-
-
 </div>
-
-
-
-
-
 
 <script src="{{=URL('static','js/default_index.js')}}"></script>
