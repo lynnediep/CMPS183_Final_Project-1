@@ -88,4 +88,20 @@
     }
 }
 
+.btn{
+  background: #76B3FA;
+  border-radius: 10px;
+  padding: 10px 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  margin: 0 15px;
+}
+
+
+.btn:hover {
+  background: #1894db;
+  text-decoration: none;
+}
+
 
