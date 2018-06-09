@@ -1,0 +1,78 @@
+{{extend 'default/sidebar.html'}}
+    <link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{=URL('static','css/chat.css')}}" rel="stylesheet" type="text/css"/>
+
+{{block head}}
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script>
+    var posts_url = "{{=URL('api', 'get_posts')}}";
+    var add_post_url = "{{=URL('api', 'add_post', user_signature=True)}}";
+    var edit_post_url = "{{=URL('api', 'edit_post', user_signature=True)}}";
+	var toggle_post_url = "{{=URL('api', 'toggle_post', user_signature=True)}}";
+    var del_post_url = "{{=URL('api', 'del_post', user_signature=True)}}";
+</script>
+{{end}}
+
+<div class="main_content">
+
+    <h1 class="ui center aligned icon header">
+        <br/>
+        <i class="circular camera icon"></i>
+        Pictures of GrubMeet <br/>
+    </h1>
+
+    <div class="ui center aligned grid container">
+        <div class="ui center fluid segment">
+            <input type="file" (change)="fileEvent($event)" class="inputfile" id="embedpollfileinput" v-on:change="upload_file" />
+            <label for="embedpollfileinput" class="ui blue right floated button">
+            <i class="ui upload icon"></i>
+                Upload image
+            </label>
+        </div>
+    </div>
+
+    <h1 class="ui center aligned icon header">
+        <br/>Global Grub Chat<br/>
+    </h1>
+	<div id="vue-div" class="display:none">
+
+		<div class="container">This is a global meal chat designed to find meal buddies!</div>
+				 <div>
+                    <textarea class="form-control string" id="no_table_content" v-model="form_content" placeholder="Post a comment" type="text" 
+							style="width:50%"></textarea>
+                    <span class="help-block"></span>
+                </div>
+            <button class="btn btn-danger btn-sm" v-on:click="add_post()">
+			    <i class="fa fa-plus"></i>
+                Post Comment
+            </button>
+    
+        <div class="result_table">
+
+            <div v-for="post in posts">
+
+                <!-- Create the div for each post -->
+			<div class = "memo">
+				  <div class="memo_text">
+				  </div>
+				  
+				    <div v-if="post.user_email == '{{=auth.user.email}}'">
+						<div class="memo_content">${post.user_email} says: ${post.content}</div>
+                    </div>
+					<div v-else>
+						<div class="memo_content" align="right">${post.user_email} says: ${post.content}</div>
+					</div>
+
+				
+                </div>
+            </div>
+		</div>
+	</div>
+
+
+
+</div>
+
+
+
+<script src="{{=URL('static','js/picture_gallery.js')}}"></script>
