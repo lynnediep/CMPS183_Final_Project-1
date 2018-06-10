@@ -50,6 +50,47 @@ var app = function () {
             enumerate(self.vue.memolist);
         });
     };
+	
+	self.toggle_post2 = function (post_id, bool) {
+        // The submit button to add a track has been added.
+		console.log(post_id);
+		console.log(bool);
+		self.vue.toggle_id = post_id;
+		console.log(self.vue.pub); 
+		self.vue.pub = bool; 
+		console.log(self.vue.pub);
+		self.vue.pub = !self.vue.pub;
+		console.log(self.vue.pub);
+        $.post(toggle_post_url,
+            { 
+                post_content: self.vue.edit_content,
+				is_pub: self.vue.pub,
+                id: self.vue.toggle_id
+            },
+            function (data) {
+					//$.web2py.enableElement($("#toggle_post_submit"));
+            });
+		self.get_memos();
+    };
+	
+    self.toggle_post = m_id => {
+        console.log("toggle_cart");
+		console.log(m_id);
+        $.post(toggle_post_url,
+            {m_id},
+            () => {
+                self.vue.memolist.forEach(e => {
+                    if (e.id === m_id) {
+						console.log(e.is_public);
+                        e.is_public = !e.is_public;
+						self.get_memos();
+						console.log(e.is_public);
+                    }
+                })
+            }
+        )
+    }
+	
 
     // Complete as needed.
     self.vue = new Vue({
@@ -62,14 +103,21 @@ var app = function () {
             memolist: [],
             logged_in: false,
             has_more: false,
+			pub: null, 
+			toggle_id: 0,
+
         },
         methods: {
             get_more: self.get_more,
+			get_memos: self.get_memos,
+			toggle_post: self.toggle_post, 
+
         }
     });
 
     self.get_memos();
     $('#explore-div').removeClass('hidden');
+    $("#vue-div").show();
     return self;
 };
 
