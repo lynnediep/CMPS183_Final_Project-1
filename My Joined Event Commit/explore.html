@@ -1,0 +1,69 @@
+{{extend 'default/sidebar.html'}}
+
+<head>
+    <link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
+
+    <script>
+        var memo_url = "{{=URL('explore', 'get_memos', user_signature=True)}}";
+    </script>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+        .ui.ribbon{
+            margin-left: 13px !important;
+        }
+    </style>
+</head>
+
+
+<div class="main_content">
+    <div id="explore-div" class="hidden">
+
+    {{if auth.user is not None:}}
+        <!-- meal view-->
+        <div id="my-meals-card" class="ui special cards">
+            <div v-for="m in memolist" class="card">
+                <div v-if="(m.user_email === '{{=auth.user.email}}')">
+                    <div class="ui blue ribbon label">
+                        <i class="spoon icon"></i> Your Event
+                    </div>
+                </div>
+                <div v-if="!(m.user_email === '{{=auth.user.email}}')">
+                    <div class="ui red ribbon label">
+                        <i class="food icon"></i> Open Event
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="https://image.flaticon.com/icons/svg/214/214298.svg">
+                </div>
+                <div v-if="!m.is_being_edited" class="content">
+                    <div class="header">${m.title}</div>
+                    <div class="description">${m.memo}</div>
+                </div>
+                <div v-if="!m.is_being_edited" class="extra content">
+                    <div><i class="users icon"></i>2 out of 8 People Joined</div>
+                    <div>
+                        <i class="clock outline icon"></i>${m.time_of_event}
+                        <i class="calendar alternate outline icon"></i>${m.datetime}
+                    </div>
+                    <div><i class="map marker alternate icon"></i>${m.area}</div>
+                    <div><i class="exclamation circle icon"></i>${m.allergens}</div>
+                </div>
+            </div>
+        </div>
+
+        <div v-if="has_more" class="show_more">
+            <button class="btn btn-default rounded" v-on:click="get_more()">
+                <i class="fa fa-ellipsis-h"></i> Load More
+            </button>
+        </div>
+
+    </div>
+{{pass}}
+</div>
+
+<script>
+</script>
+<script src="{{=URL('static','js/default/explore.js')}}"></script>
