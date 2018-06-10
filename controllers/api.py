@@ -113,3 +113,73 @@ def toggle_visibility():
     toggleVal = True if row.is_public == False else False
     row.update_record(is_public=toggleVal)
     return response.json(dict(is_public=toggleVal))
+
+#################### Global Chat #########################
+
+def get_posts():
+    """This controller is used to get the posts.  Follow what we did in lecture 10, to ensure
+    that the first time, we get 4 posts max, and each time the "load more" button is pressed,
+    we load at most 4 more posts."""
+    # Implement me!
+    print "Made it to the get posts api"
+    start_idx = int(request.vars.start_idx) if request.vars.start_idx is not None else 0
+    end_idx = int(request.vars.end_idx) if request.vars.end_idx is not None else 0
+    # We just generate a lot of of data.
+    posts = []
+    has_more = False
+
+    rows = db().select(db.post.ALL)
+    for i, r in enumerate(rows):
+
+        print r
+    #if i < end_idx - start_idx:
+        t = dict(
+            id=r.id,
+            user_email=r.user_email,
+            content=r.post_content,
+            created_on=r.created_on,
+
+        )
+        print("HERER MAN")
+        print(t)
+        posts.append(t)
+       # else:
+          #  has_more = True
+    logged_in = auth.user_id is not None
+    posts.reverse()
+    return response.json(dict(
+        posts=posts,
+        logged_in=logged_in,
+        has_more=has_more,
+    ))
+
+
+# Note that we need the URL to be signed, as this changes the db.
+@auth.requires_signature()
+def add_post():
+    """Here you get a new post and add it.  Return what you want."""
+    # Implement me!
+    user_email = auth.user.email or None
+    p_id = db.post.insert(post_content=request.vars.content, title=request.vars.content2)
+    p = db.post(p_id)
+    post = dict(
+            id=p.id,
+            user_email=p.user_email,
+            content=p.post_content,
+            created_on=p.created_on,
+    )
+    #post = db(db.post.id == request.vars.id).select().first()
+    #post.update_record(title = request.vars.content2)
+    print("ADD_POST")
+    print p
+    return response.json(dict(post=post))
+
+
+
+@auth.requires_signature()
+def del_post():
+    """Used to delete a post."""
+    # Implement me!
+    db(db.post.id == request.vars.post_id).delete()
+    return "ok"
+

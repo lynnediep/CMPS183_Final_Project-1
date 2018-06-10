@@ -1,9 +1,75 @@
 {{extend 'default/sidebar.html'}}
+    <link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{=URL('static','css/chat.css')}}" rel="stylesheet" type="text/css"/>
 
-<div>messages</div>
-
-
+{{block head}}
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
 <script>
-    $('#messages_tab').addClass("active");
-
+    var posts_url = "{{=URL('api', 'get_posts')}}";
+    var add_post_url = "{{=URL('api', 'add_post', user_signature=True)}}";
+    var edit_post_url = "{{=URL('api', 'edit_post', user_signature=True)}}";
+	var toggle_post_url = "{{=URL('api', 'toggle_post', user_signature=True)}}";
+    var del_post_url = "{{=URL('api', 'del_post', user_signature=True)}}";
 </script>
+{{end}}
+
+<div class="main_content">
+
+    <h1 class="ui center aligned icon header">
+        <br/>
+        <i class="circular chat icon"></i>
+        Global Grub Chat <br/>
+    </h1>
+
+    <h5 class="ui center aligned header">Designed for spontaneous outings with buddies </h5>
+
+    <br/>
+
+	<div id="vue-div" class="display:none">
+
+				 <div class="form-horizontal ui form">
+                    <input class="form-control string" id="no_table_content" v-model="form_content" placeholder="Comment Here" type="text"
+							style="height:5%">
+                    <span class="help-block"></span>
+                </div>
+
+        <br/>
+            <button class="ui small blue button" v-on:click="add_post()">
+			    <i class="plus icon"></i>
+                Post Comment
+            </button>
+
+
+        <div class="result_table">
+            <br/>
+            <div v-for="post in posts">
+
+                <!-- Create the div for each post -->
+			<div class = "ui floating message">
+				  <div class="memo_text">
+				  </div>
+
+
+				    <div v-if="post.user_email == '{{=auth.user.email}}'">
+						<div class="memo_content">${post.user_email} says: ${post.content}</div>
+                        <div>Posted: ${post.created_on}</div>
+                    </div>
+					<div v-else>
+						<div class="memo_content" align="right">${post.user_email} says: ${post.content}</div>
+                        <div align="right">Posted: ${post.created_on}</div>
+					</div>
+
+
+                </div>
+                <br/>
+            </div>
+		</div>
+	</div>
+
+
+
+</div>
+
+
+
+<script src="{{=URL('static','js/picture_gallery.js')}}"></script>
