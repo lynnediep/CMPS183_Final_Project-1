@@ -2,9 +2,13 @@
 
 <head>
     <link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="{{=URL('static', 'font-awesome-4.6.3/css/font-awesome.min.css')}}">
+
 
     <script>
         var memo_url = "{{=URL('explore', 'get_memos', user_signature=True)}}";
+	    var toggle_post_url = "{{=URL('explore', 'toggle_post', user_signature=True)}}";
+
     </script>
 
     <style>
@@ -19,6 +23,8 @@
 
 
 <div class="main_content">
+    <div id="vue-div" class="display:none">
+
     <div id="explore-div" class="hidden">
 
     {{if auth.user is not None:}}
@@ -35,11 +41,18 @@
                         <i class="food icon"></i> Open Event
                     </div>
                 </div>
+			<div>
+                <div v-if="m.is_public">
+                    <div class="ui green ribbon label">
+                        <i class="food icon"></i> Event Joined (͠≖ ͜ʖ͠≖)
+                    </div>
+                </div>
+
+			</div>
                 <div class="image">
                     <img src="https://image.flaticon.com/icons/svg/214/214298.svg">
                 </div>
                 <div v-if="!m.is_being_edited" class="content">
-                    <div class="memo_name">${m.first_name}'s Event:</div>
                     <div class="header">${m.title}</div>
                     <div class="description">${m.memo}</div>
                 </div>
@@ -51,6 +64,18 @@
                     </div>
                     <div><i class="map marker alternate icon"></i>${m.area}</div>
                     <div><i class="exclamation circle icon"></i>${m.allergens}</div>
+                    <br/>
+
+                    <button v-if="!(m.user_email === '{{=auth.user.email}}')" class="ui small button" v-on:click="toggle_post(m.id)">
+                        <a v-if="m.is_public">Event Joined</a>
+                        <a v-if="!m.is_public">Join Event</a>
+                    </button>
+
+                    <button v-if="!(m.user_email === '{{=auth.user.email}}') && m.is_public" class="ui small button" v-on:click="toggle_post(m.id)">
+                        Leave Event
+                    </button>
+
+
                 </div>
             </div>
         </div>
