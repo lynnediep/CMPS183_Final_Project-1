@@ -1,4 +1,11 @@
-# CMPS183_Final_Project
+# CMPS183_Final_Project - Alex Branch
+
+This is my branch for the final project. 
+
+I align my tasks into each folder on this branch. 
+
+Since I had to pack the site, I also uploaded the independent files I modified. 
+
 
 GrubMeet
 
