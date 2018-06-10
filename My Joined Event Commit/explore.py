@@ -54,3 +54,27 @@ def get_memos():
         logged_in=logged_in,
         has_more=has_more,
     ))
+
+@auth.requires_signature()
+def toggle_post():
+    if request.vars.m_id is None:
+        raise HTTP(500)
+    q = ((db.checklist.id == request.vars.m_id))
+    row = db(q).select().first()
+    row.update_record(is_public = not row.is_public)
+
+@auth.requires_signature()
+def toggle_post2():
+    print("well i got here, post below")
+    cl = db(db.checklist.id == request.vars.id).select().first()
+    print cl
+    if cl.is_public is True:
+        cl.update_record(is_public = False)
+    else:
+        cl.update_record(is_public = True)
+    #post.update_record(is_public = not post.is_public)
+    print cl
+    print ("TOGGLED IS_PUBLIC")
+    #redirect(URL('default', 'index'))
+    #return response.json(dict(post=post))
+    return dict()
