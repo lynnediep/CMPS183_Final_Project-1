@@ -1,4 +1,4 @@
-{{extend 'default/sidebar.html'}}
+{{extend 'layout.html'}}
     <link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{=URL('static','css/calendar.css')}}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"/>
@@ -16,7 +16,13 @@
 
       $(document).ready(function() {
 
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+
         $('#calendar').fullCalendar({
+          editable: false,
 
           header: {
             left: 'prev,next today',
@@ -31,6 +37,21 @@
 
           // US Holidays
           events: 'en.usa#holiday@group.v.calendar.google.com',
+
+          // Meal events
+          events: [
+              {{for row in memolist:}}
+                {{if row!=0:}}, {{pass}}
+                {
+                    title: '{{=i.title}}',
+                    allDay: false,
+                    start: new Date('{{=row.datetime.strftime('%B %d, %Y %H:%M:%S')}}'),
+                    end: new Date('{{=row.time_of_event.strftime('%B %d, %Y %H:%M:%S')}}'),
+                    // url: '{{=URL('memo_read', args=row.id)}}'
+                }
+              {{pass}}
+           ]
+
 
           eventClick: function(event) {
             // opens events in a popup window
