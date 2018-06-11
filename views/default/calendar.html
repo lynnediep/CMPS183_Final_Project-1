@@ -12,7 +12,7 @@
     <script src='/final2/static/fullcalendar/lib/jquery.min.js'></script>
     <script src='/final2/static/fullcalendar/fullcalendar.min.js'></script>
     <script src='/final2/static/fullcalendar/gcal.min.js'></script>
-    <script>
+    <script type="text/javascript">
 
       $(document).ready(function() {
 
@@ -40,10 +40,14 @@
 
           // Meal events
           events: [
-              {{for row in memolist:}}
+              // loop though all the events/memos
+              // TODO: the error occurs in 'checklist' I'm having trouble linking the database to the calendar
+              // What I'm trying to do is to retrieve all the memos and take the title and time/date to print on the calendar
+              {{for row in enumerate(checklist):}}
                 {{if row!=0:}}, {{pass}}
                 {
-                    title: '{{=i.title}}',
+                    // these fields
+                    title: '{{=row.title}}',
                     allDay: false,
                     start: new Date('{{=row.datetime.strftime('%B %d, %Y %H:%M:%S')}}'),
                     end: new Date('{{=row.time_of_event.strftime('%B %d, %Y %H:%M:%S')}}'),
