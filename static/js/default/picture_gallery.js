@@ -8,50 +8,36 @@ var app = function () {
     Vue.config.silent = false; // show all warnings
     Vue.config.devtools = true;
 
-
-    self.user_pref_edit_toggle = function (input) {
-        self.vue.is_edit_user_name = false;
-        if (input === "name") {
-            self.vue.is_edit_user_name = true;
+    // Extends an array
+    self.extend = function (a, b) {
+        for (var i = 0; i < b.length; i++) {
+            a.push(b[i]);
         }
-    }
+    };
 
-    self.get_user_pref = function () {
-        $.get(get_user_pref_url, function (data) {
-            self.vue.user_pref = data;
-        })
-    }
-
-    self.update_user_pref = function () {
-        $.post(update_user_pref_url, {
-            user_first_name: self.vue.user_pref.first_name,
-            user_last_name: self.vue.user_pref.last_name,
-        })
-        self.vue.is_edit_user_name = false;
-    }
-
-    self.cancel_user_pref = function () {
-        $.get(get_user_pref_url, function (data) {
-            self.vue.user_pref = data;
-        })
-        self.vue.is_edit_user_name = false;
-    }
+    // Enumerates an array.
+    var enumerate = function (v) {
+        var k = 0;
+        return v.map(function (e) {
+            e._idx = k++;
+        });
+    };
 
     self.open_uploader = function () {
-        $('#avatar_uploader').modal({closable: false}).modal('show');
+        $('#gallery_uploader').modal({closable:false}).modal('show');
         self.vue.is_uploading = true;
     };
 
     self.close_uploader = function () {
-        $('#avatar_uploader').modal('hide');
+        $('#gallery_uploader').modal('hide');
         self.vue.is_uploading = false;
-        $("#avatar_file_input").val(""); // This clears the file choice once uploaded.
+        $("#gallery_file_input").val(""); // This clears the file choice once uploaded.
 
     };
 
     self.upload_file = function (event) {
         // Reads the file.
-        var input = $('#avatar_file_input')[0];
+        var input = $('#gallery_file_input')[0];
         var file = input.files[0];
 
         // TODO read local copy instead of waiting 1 second
@@ -72,6 +58,7 @@ var app = function () {
                     // TODO: if you like, add a listener for "error" to detect failure.
                     req.open("PUT", put_url, true);
                     req.send(file);
+                    self.vue.form_description = "";
                 });
         }
     };
@@ -85,64 +72,71 @@ var app = function () {
         self.close_uploader();
         console.log('The file was uploaded; it is now available at ' + get_url);
         // TODO: The file is uploaded.  Now you have to insert the get_url into the database, etc.
+        var image_description = self.vue.form_description;
         self.vue.file_selected = false;
         self.vue.upload_file_name = null;
         setTimeout(function () {
-            self.update_avatar(get_url);
+            self.add_image(get_url, image_description);
         }, 1500);
     };
 
-    self.update_avatar = function (get_url) {
-        $.post(update_avatar_url, // defined at index.html header.
+    self.add_image = function (get_url, image_description) {
+        $.post(add_image_url, // defined at index.html header.
             {
                 image_url: get_url,
+                image_description: image_description,
             },
             function (data) {
-                self.vue.user_avatar = data.image;
+                self.vue.imagelist.unshift(data.image);
+                enumerate(self.vue.imagelist);
             });
     };
 
-    self.get_user_avatar = function () {
+    function get_image_url(start_idx, end_idx) {
+        var pp = {
+            start_idx: start_idx,
+            end_idx: end_idx
+        };
+        //passing start_idx and end_idx to /api/get_images through url
+        return image_url + "&" + $.param(pp);
+        // .param automatically generate a link from objects
+    }
+
+    self.get_user_images = function (_idx) {
         // intital list
-        console.log("getting avatar");
-        $.getJSON(get_user_avatar_url,
+        $.getJSON(get_image_url(0, 20), {},
             function (data) {
-                self.vue.user_avatar = data.image_url;
+                self.vue.imagelist = data.imagelist;
+                enumerate(self.vue.imagelist);
             })
     };
 
-    // Complete as needed.
     self.vue = new Vue({
-        el: "#user-pref-div",
+        el: "#gallery-div",
         delimiters: ['${', '}'],
         unsafeDelimiters: ['!{', '}'],
         data: {
-            // global variables
-            user_pref: {},
-            user_avatar: null,
-            is_edit_user_name: false,
-            user_is_editing: null,
+            imagelist: [],
             is_uploading: false,
-            file_selected: null,
+            form_description: null,
+            file_selected: false,
             upload_file_name: null
         },
         methods: {
-            update_user_pref: self.update_user_pref,
-            cancel_user_pref: self.cancel_user_pref,
-            user_pref_edit_toggle: self.user_pref_edit_toggle,
-            close_uploader: self.close_uploader,
             open_uploader: self.open_uploader,
+            close_uploader: self.close_uploader,
             upload_file: self.upload_file,
+            get_user_images: self.get_user_images,
         }
     });
-
-    self.get_user_pref();
-    // self.get_user_avatar();
-    $('#user-pref-div').removeClass('hidden');
-    $('#avatar_file_input').change(function () {
+    // don't show any images initially
+    self.get_user_images(-1);
+    $("#gallery-div").show();
+    $('#gallery_file_input').change(function () {
         self.vue.file_selected = true;
         self.vue.upload_file_name = this.value.replace(/.*[\/\\]/, '');
     });
+
     return self;
 };
 
@@ -153,5 +147,4 @@ var APP = null;
 jQuery(function () {
     APP = app();
 });
-
 

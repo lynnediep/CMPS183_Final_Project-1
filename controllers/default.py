@@ -9,13 +9,16 @@
 # -------------------------------------------------------------------------
 
 def home():
+    if auth.user is not None:
+        redirect(URL('default', 'explore'))
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
-
-@auth.requires_login()
 def index():
-    redirect(URL('default', 'home'))
+    if auth.user is not None:
+        redirect(URL('default', 'explore'))
+    else:
+        redirect(URL('default', 'home'))
 
 
 @auth.requires_login()
@@ -60,12 +63,12 @@ def preferences():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
-
+@auth.requires_login()
 def picture_gallery():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
-
+@auth.requires_login()
 def joined_meals():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))

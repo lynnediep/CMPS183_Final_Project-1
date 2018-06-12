@@ -1,34 +1,115 @@
 {{extend 'default/sidebar.html'}}
-    <link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
+<head>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        #gallery-div, #gallery-card {
+            padding-top: 15px;
+        }
+
+        #gallery-card .card, #gallery-card img {
+            border-radius: 0px;
+            box-shadow: none;
+        }
+
+        #gallery-card .card {
+            margin: .5em .5em;
+        }
+
+        #gallery-card img:hover {
+            filter: brightness(75%);
+        }
+
+        .gallery-image {
+            position: relative;
+        }
+
+        .gallery-image-des {
+            width: 90%;
+            position: absolute;
+            color: white;
+            font-size: 18px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #gallery_file_input {
+            display: none;
+        }
+
+        #add_image_btn {
+            background: #ff4a55;
+            color: white;
+        }
+    </style>
+</head>
 
 
-
-<div class="main_content">
-
-    <h1 class="ui center aligned icon header">
-        <br/>
-        <i class="circular camera icon"></i>
-        Pictures of GrubMeet <br/>
-    </h1>
+<link href="{{=URL('static','css/myapp.css')}}" rel="stylesheet" type="text/css"/>
+<script>
+    var image_url = "{{=URL('gallery', 'get_images', user_signature=True)}}";
+    var add_image_url = "{{=URL('gallery', 'add_image', user_signature=True)}}";
+</script>
 
 
+<div id="gallery-div" class="hidden">
+    <!-- Code to upload files, with control buttons -->
+    <div id="gallery_uploader" class="ui modal">
+        <i class="close icon" v-on:click="close_uploader"></i>
+        <div class="header">
+            Upload to Image Gallery
+        </div>
+        <div class="content">
+            <div class="ui form">
+                <div class="two fields">
+                    <div class="field">
+                        <label for="gallery_file_input" class="ui icon green basic button">
+                            <i class="ui upload icon"></i>
+                            Upload Image
+                        </label>
+                    </div>
+                    <input id="gallery_file_input" class="ui primary button" type="file" accept="image/jpeg">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <input id="gallery_description_input" type="text" placeholder="description"
+                                   v-model="form_description">
+                            <i class="pencil alternate icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div v-if="file_selected">${upload_file_name} selected</div>
 
-    <div class="ui center aligned grid container">
-        <div class="ui center fluid segment">
-            <input type="file" (change)="fileEvent($event)" class="inputfile" id="embedpollfileinput" v-on:change="upload_file" />
-            <label for="embedpollfileinput" class="ui blue right floated button">
-            <i class="ui upload icon"></i>
-                Upload image
-            </label>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="ui green basic button" v-on:click="upload_file">Submit</button>
+            <button v-if="is_uploading" v-on:click="close_uploader" class="ui red basic button">Cancel
+            </button>
         </div>
     </div>
 
-
-
-
-
+    <button id="add_image_btn" v-if="!is_uploading" v-on:click="open_uploader"
+            class="ui labeled icon button"><i class="plus icon"></i>Add
+    </button>
+    <div id='gallery-card' class="ui special cards">
+        <div v-for="image in imagelist" class="card">
+            <div v-on:mouseover="image.show_des = true" v-on:mouseleave="image.show_des = false"
+                 class="image gallery-image">
+                <img v-bind:src="image.image_url"/>
+                <div v-if="image.show_des" class="gallery-image-des">
+                    <i class="sticky note icon"></i>${image.image_description}
+                    <br><br>
+                    <i class="clock icon"></i>${image.created_on}
+                    <br><br>
+                    <i class="user icon"></i>${image.first_name.first_name}  ${image.last_name.last_name}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
-
-<script src="{{=URL('static','js/default_index.js')}}"></script>
+<script src="{{=URL('static','js/default/picture_gallery.js')}}"></script>

@@ -1,17 +1,15 @@
 // This is the js for the default/index.html view.
 
 
-
-
 //a good portion of code originated from https://piazza.com/class/jf2geiytvic7ao?cid=301 and is modified for this assignment
 
-var app = function() {
+var app = function () {
 
     var self = {};
     Vue.config.silent = false; // show all warnings
 
     // Extends an array
-    self.extend = function(a, b) {
+    self.extend = function (a, b) {
         for (var i = 0; i < b.length; i++) {
             a.push(b[i]);
         }
@@ -26,11 +24,9 @@ var app = function() {
     }
 
 
-
-
     self.get_posts = function () {
         var post_len = self.vue.posts.length;
-        $.getJSON(get_posts_url(post_len, post_len+4), function (data) {
+        $.getJSON(get_posts_url(post_len, post_len + 4), function (data) {
             console.log(data);
             self.vue.posts = data.posts;
             self.vue.has_more = data.has_more;
@@ -40,8 +36,8 @@ var app = function() {
 
     self.add_post_button = function () {
         // The button to add a track has been pressed.
-        if(self.vue.logged_in)
-          self.vue.is_adding_post = !self.vue.is_adding_post;
+        if (self.vue.logged_in)
+            self.vue.is_adding_post = !self.vue.is_adding_post;
     };
 
     self.add_post = function () {
@@ -60,13 +56,12 @@ var app = function() {
                 }
                 self.vue.is_adding_post = !self.vue.is_adding_post;
                 self.vue.form_content = "";
-				self.vue.form_content2 = "";
+                self.vue.form_content2 = "";
 
             });
         //self.get_posts();
 
     };
-
     self.get_more = function () {
         var num_posts = self.vue.posts.length;
         $.getJSON(get_posts_url(num_posts, num_posts + 4), function (data) {
@@ -79,17 +74,17 @@ var app = function() {
         // The submit button to add a track has been added.
         $.post(edit_post_url,
             {
-				post_title: self.vue.edit_content2,
+                post_title: self.vue.edit_content2,
                 post_content: self.vue.edit_content,
                 id: self.vue.edit_id
             },
             function (data) {
-				console.log(data);
+                console.log(data);
                 $.web2py.enableElement($("#edit_post_submit"));
                 self.vue.editing = !self.vue.editing;
             });
     };
-    self.edit_post = function(post_id) {
+    self.edit_post = function (post_id) {
         console.log(post_id);
         self.vue.editing = !self.vue.editing;
         self.vue.edit_id = post_id;
@@ -100,25 +95,23 @@ var app = function() {
         self.vue.edit_id = 0;
     };
 
-	self.toggle_post = function (post_id) {
+    self.toggle_post = function (post_id) {
         // The submit button to add a track has been added.
-		self.vue.toggle_id = post_id;
-		console.log(self.vue.pub);
-		self.vue.pub = !self.vue.pub;
-		console.log(self.vue.pub);
+        self.vue.toggle_id = post_id;
+        console.log(self.vue.pub);
+        self.vue.pub = !self.vue.pub;
+        console.log(self.vue.pub);
         $.post(toggle_post_url,
             {
                 post_content: self.vue.edit_content,
-				is_pub: self.vue.pub,
+                is_pub: self.vue.pub,
                 id: self.vue.toggle_id
             },
             function (data) {
                 $.web2py.enableElement($("#toggle_post_submit"));
             });
     };
-
-
-    self.delete_track = function(post_id) {
+    self.delete_track = function (post_id) {
         $.post(del_post_url,
             {
                 post_id: post_id
@@ -144,11 +137,8 @@ var app = function() {
             }
         )
     };
-
-
-    // Complete as needed.
     self.vue = new Vue({
-        el: "#vue-div",
+        el: "#messages-div",
         delimiters: ['${', '}'],
         unsafeDelimiters: ['!{', '}'],
         data: {
@@ -156,17 +146,17 @@ var app = function() {
             get_more: false,
             logged_in: false,
             editing: false,
-			toggling: false,
-			pub: null,
+            toggling: false,
+            pub: null,
             is_adding_post: false,
             has_more: false,
             form_content: null,
-			form_content2: null,
+            form_content2: null,
             edit_content: null,
             edit_content2: null,
             edit_id: 0,
-			toggle_content: null,
-			toggle_id: 0,
+            toggle_content: null,
+            toggle_id: 0,
             show: true
         },
         methods: {
@@ -175,16 +165,15 @@ var app = function() {
             add_post: self.add_post,
             delete_track: self.delete_track,
             edit_post: self.edit_post,
-			toggle_post: self.toggle_post,
+            toggle_post: self.toggle_post,
             edit_post_submit: self.edit_post_submit,
             cancel_edit: self.cancel_edit
         }
 
-
     });
 
     self.get_posts();
-    $("#vue-div").show();
+    $("#messages-div").show();
     return self;
 };
 
@@ -192,4 +181,6 @@ var APP = null;
 
 // This will make everything accessible from the js console;
 // for instance, self.x above would be accessible as APP.x
-jQuery(function(){APP = app();});
+jQuery(function () {
+    APP = app();
+});

@@ -1,0 +1,20 @@
+[
+  {
+    "origin": [
+      "*"
+    ],
+    "responseHeader": [
+      "Content-Type",
+      "Access-Control-Allow-Origin"
+    ],
+    "method": [
+      "GET",
+      "PUT",
+      "POST",
+      "OPTIONS"
+    ],
+    "maxAgeSeconds": 3600,
+    "client_email": "image-uploader@grubmeet-205717.iam.gserviceaccount.com",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCk/L940+RtpLa2\n88Hp4tAERFHgxonTwhBTwM5NRVFYd/iKG9FiMVPvk4vaz9CzUTcgzzpberVu+Qza\nINj+H9N6ERcB7Vl8wX+wGSiWBOtu4ogu7bJQUeHQU96lijgPe0T5hhB1dgEyoC7A\nFHVLXzslBlTHtCAzouYp8oziEvdLuLRm2ARGUgynj6En00l3oaWurVAb3Im6DrMj\npuIGMo/Ljrnb0/NBeo3Q4elKmNDjVTqAfH95ArVusErb07TpcywhcHZeWVNYqzdQ\nF5al4rIQTu8+5DlUFyn2SVuuasYWjX0CESUAeJHhSR4NtUBEOteoxynSgXSdm+PN\nNJi9YaXlAgMBAAECggEAA0yEDfs7cTwx5Kz+QgCLy3ByRd3lmgGI9T1afEELXb5I\nW4di3TIo5q/UkNnggM76HM9uVnxSbf2c1cYb9wWiSam90NQMgTbjqFAlRGdxlBRp\n4XmI1ZvnH/tAhtIH41QodOf+Iqfq+wNcHySv+h0IjOnFGDK9BUtK8g75GJKFT1MO\ntW1SFeWUkhXFEac3Tu8wBRmly0CLkp2sqTGGi/OX5qzFxaxAnhur0JWYFyqODUl0\nbDKO5cBinIcrPDid+w9WCMj5lrgShiGAdcDbBwwbCued2B2lMZSQESnmN3d7bxLm\nZW5DkODjk25lBKpCAXhYBxf4xTGApYrqJld3sjfQoQKBgQDVF4wt2N94tV7j39tu\nZSirJwHczh67chs4Lwj4o1cPoiZNNmNP6P+IWS5d4OsMvvqC6A7uqss9fQgrUbn/\nnry4ey84R8fJQ1h3tj2mNprCkbKuqKe+NmxH4XnjrcLwvmZVS8MMLTMEYGhyeVkH\nwVlXlmaSH3FU7stvo3YjPRcIiwKBgQDGNYDCG04mTBFVnlcA8VIcY2XOPm/kK0NU\nGsr5Mf1xpxaZLfPxB0+Cmr9KZ5ld9eB6ef6fH6BsW0W1OfQU2NV+4OZxuRikYM4t\nxfrrc9OPuhsDD8WaNlSaUgD6FHwhlR5Fp6QsX1+QaQyn2yTXgmv91lzeRTeeJnXd\n4YkURe9pTwKBgFs8hcxreuMX5NT0V+NgdJUzUlzT89yV8omPueubI/+RkYylqMfi\nHuamKHARiRIgAuphqWMOxY5CJmlFyLlloa/rLkCOmz/VEd/Pq32rC4AbGcImfAu5\nCYuNQr70+u5Q10fV9GEWSS2qiY3Z3wCvDC2wO6J8y+1tgLT/6+kSkvYZAoGBAJ6B\nQMN5RIi5wg7+/cKiOTC8iDhjk+Uad9A1UOXxBSWzIg5DQlYYq4vdJmZg7LPIIciv\n8F/d0dN1NgyUGM3nDOxW+9Ir3DnvtFHEhkFuMdw5Tsqm/TWyhvuV4nQal53fewLm\n6hIV/v0kFNvTEuZIxQWMPF3/alfNl+plJtMQjkFfAoGBAJtVoZfX/ZqoU9k0l0BN\nlTdWr6P7QH1fDvDWwpSJT7oTUQE9CerEtV2B/9diJul3fMUnUS4eE4UG62ELna0A\nnTVk0lfRqNVD9f2u7rUVZalV8HDeOVeOdAK5XEJiQVvIwEU7HOsHHuTglDQw6/6c\n5S9eEMCgD1vDS+9qUFD4JHd4\n-----END PRIVATE KEY-----\n"
+  }
+]

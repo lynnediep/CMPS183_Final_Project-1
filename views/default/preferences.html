@@ -4,6 +4,8 @@
     <script>
         var get_user_pref_url = "{{=URL('user_pref', 'get_user_pref', user_signature=True)}}";
         var update_user_pref_url = "{{=URL('user_pref', 'update_user_pref', user_signature=True)}}";
+        var get_user_avatar_url = "{{=URL('user_pref', 'get_user_avatar', user_signature=True)}}";
+        var update_avatar_url = "{{=URL('user_pref', 'update_avatar', user_signature=True)}}";
     </script>
     <style>
         .hidden {
@@ -16,14 +18,19 @@
 
         #user-pref-div .ui.segment {
             cursor: pointer;
+            margin: 0px 0px 0px 0px;
         }
 
         #user-pref-div .ui.segment:hover {
             background-color: rgb(250, 250, 250);
         }
 
-        .user-pref-btn{
+        .user-pref-btn {
             padding-top: 10px;
+        }
+
+        #avatar_file_input {
+            display: none;
         }
     </style>
 </head>
@@ -32,6 +39,35 @@
     <div class="ui segment" style="margin-bottom: 0px">
         <h3 class="ui header">My Preferences</h3>
     </div>
+    <!--
+    <div class="ui segment">
+    <button id="edit_avatar_btn" v-if="!is_uploading" v-on:click="open_uploader"
+            class="ui labeled icon button"><i class="plus icon"></i>Change Profile Picture
+    </button>
+    </div>
+    <div id="avatar_uploader" class="ui mini modal">
+        <i class="close icon" v-on:click="close_uploader"></i>
+        <div class="header">
+            Uploading Profile Picture
+        </div>
+        <div class="content">
+            <div class="ui form">
+                <div class="field">
+                    <label for="avatar_file_input" class="ui icon green basic button">
+                        <i class="ui upload icon"></i>
+                        Upload Image
+                    </label>
+                </div>
+                <input id="avatar_file_input" class="ui primary button" type="file" accept="image/jpeg">
+                <div v-if="file_selected">${upload_file_name} selected</div>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="ui green basic button" v-on:click="upload_file">Submit</button>
+            <button v-if="is_uploading" v-on:click="close_uploader" class="ui red basic button">Cancel
+            </button>
+        </div>
+    </div>-->
     <div v-if="!is_edit_user_name" v-on:click="user_pref_edit_toggle('name')">
         <div class="ui segment">
             <div><b>Name</b></div>

@@ -9,6 +9,7 @@
 
 import datetime
 
+
 def get_user_email():
     return auth.user.email if auth.user is not None else None
 
@@ -31,7 +32,19 @@ db.define_table('checklist',
 db.define_table('post',
                 Field('user_email', default=auth.user.email if auth.user_id else None),
                 Field('post_content', 'text'),
-                Field('created_on', 'datetime', default=datetime.datetime.utcnow()),
+                Field('created_on', 'datetime', default=datetime.datetime.utcnow())
+                )
+
+db.define_table('user_images',
+                Field('created_on', 'datetime', default=request.now),
+                Field('created_by', 'reference auth_user', default=auth.user_id),
+                Field('image_url'),
+                Field('description', 'text')
+                )
+
+db.define_table('user_avatar',
+                Field('belongs_to', 'reference auth_user', default=auth.user_id),
+                Field('image_url')
                 )
 
 # I don't want to display the user email by default in all forms.

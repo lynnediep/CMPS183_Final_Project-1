@@ -1,0 +1,918 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.IOError'> [Errno 2] No such file or directory: '/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/private/gcs_keys.json'"
+p3
+sS'layer'
+p4
+S'/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/controllers/uploader.py'
+p5
+sS'code'
+p6
+S'<code object <module> at 0x10bc95b30, file "/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/controllers/uploader.py", line 1>'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__getslice__'
+p12
+S"<method-wrapper '__getslice__' of exceptions.IOError object>"
+p13
+sS'__str__'
+p14
+S"<method-wrapper '__str__' of exceptions.IOError object>"
+p15
+sS'__reduce__'
+p16
+S'<built-in method __reduce__ of exceptions.IOError object>'
+p17
+sS'__dict__'
+p18
+S'{}'
+p19
+sS'__sizeof__'
+p20
+S'<built-in method __sizeof__ of exceptions.IOError object>'
+p21
+sS'message'
+p22
+S"''"
+p23
+sS'__init__'
+p24
+S"<method-wrapper '__init__' of exceptions.IOError object>"
+p25
+sS'__setattr__'
+p26
+S"<method-wrapper '__setattr__' of exceptions.IOError object>"
+p27
+sS'__reduce_ex__'
+p28
+S'<built-in method __reduce_ex__ of exceptions.IOError object>'
+p29
+sS'__new__'
+p30
+S'<built-in method __new__ of type object>'
+p31
+sS'errno'
+p32
+S'2'
+sS'__format__'
+p33
+S'<built-in method __format__ of exceptions.IOError object>'
+p34
+sS'__class__'
+p35
+S"<type 'exceptions.IOError'>"
+p36
+sS'filename'
+p37
+S"'/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/private/gcs_keys.json'"
+p38
+sS'__doc__'
+p39
+S"'I/O operation failed.'"
+p40
+sS'__getitem__'
+p41
+S"<method-wrapper '__getitem__' of exceptions.IOError object>"
+p42
+sS'__setstate__'
+p43
+S'<built-in method __setstate__ of exceptions.IOError object>'
+p44
+sS'__getattribute__'
+p45
+S"<method-wrapper '__getattribute__' of exceptions.IOError object>"
+p46
+sS'args'
+p47
+S"(2, 'No such file or directory')"
+p48
+sS'__subclasshook__'
+p49
+S'<built-in method __subclasshook__ of type object>'
+p50
+sS'__unicode__'
+p51
+S'<built-in method __unicode__ of exceptions.IOError object>'
+p52
+sS'strerror'
+p53
+S"'No such file or directory'"
+p54
+sS'__delattr__'
+p55
+S"<method-wrapper '__delattr__' of exceptions.IOError object>"
+p56
+sS'__repr__'
+p57
+S"<method-wrapper '__repr__' of exceptions.IOError object>"
+p58
+sS'__hash__'
+p59
+S"<method-wrapper '__hash__' of exceptions.IOError object>"
+p60
+ssS'evalue'
+p61
+S"[Errno 2] No such file or directory: '/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/private/gcs_keys.json'"
+p62
+sS'request'
+p63
+cgluon.html
+XML_unpickle
+p64
+(S's>b\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>grubmeet</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>uploader</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_admin</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-c35ee24a-4c0e-4e11-aa88-e7292df51d70<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_grubmeet</td><td style="vertical-align:top;">:</td><td><div>6:7ad8bc64-07ea-4b21-86c1-1b3c178da67a<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_hw5</td><td style="vertical-align:top;">:</td><td><div>12:2e7bbf5e-6529-4d47-89cb-aef25e03d100<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_welcome</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-458d96a7-ff96-456a-8246-a1a311b0b7fb<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.9,zh-TW;q=0.8,zh;q=0.7,zh-CN;q=0.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>session_id_admin=127.0.0.1-c35ee24a-4c0e-4e11-aa88-e7292df51d70; session_id_welcome=127.0.0.1-458d96a7-ff96-456a-8246-a1a311b0b7fb; session_id_hw5=&quot;12:2e7bbf5e-6529-4d47-89cb-aef25e03d100&quot;; session_id_grubmeet=&quot;6:7ad8bc64-07ea-4b21-86c1-1b3c178da67a&quot;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_UPGRADE_INSECURE_REQUESTS</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/grubmeet/uploader/get_upload_url</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>61829</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>admins-MacBook-Pro-3.local</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/Users/admin/Desktop/cmps183/web2py/applications/hw5/&#x27;, &#x27;/Users/admin/Desktop/cmps183/web2py/applications/welcome/&#x27;, &#x27;/Users/admin/Desktop/cmps183/web2py/applications/admin/&#x27;, &#x27;/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/Users/admin/Desktop/cmps183/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x1045168c0: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;admins-MacBook-Pro-3.local&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: True, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/Users/admin/Desktop/cmps183/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;hw5&#x27;, &#x27;grubmeet&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/Users/admin/Desktop/cmps183/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.9,zh-TW;q=0.8,zh;q=0.7,zh-CN;q=0.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>session_id_admin=127.0.0.1-c35ee24a-4c0e-4e11-aa88-e7292df51d70; session_id_welcome=127.0.0.1-458d96a7-ff96-456a-8246-a1a311b0b7fb; session_id_hw5=&quot;12:2e7bbf5e-6529-4d47-89cb-aef25e03d100&quot;; session_id_grubmeet=&quot;6:7ad8bc64-07ea-4b21-86c1-1b3c178da67a&quot;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_upgrade_insecure_requests</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_py2</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>admins-MacBook-Pro-3.local</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/grubmeet/uploader/get_upload_url</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>61829</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/grubmeet/uploader/get_upload_url</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>admins-MacBook-Pro-3.local</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>/Users/admin/Desktop/cmps183/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.16.1-stable+timestamp.2017.11.14.05.54.25</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x102c961e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x1044c1e20&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x10bd443d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x102c961e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x1044c1e20&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x10bd443d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>get_upload_url</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/Users/admin/Desktop/cmps183/web2py/applications/hw5/&#x27;, &#x27;/Users/admin/Desktop/cmps183/web2py/applications/welcome/&#x27;, &#x27;/Users/admin/Desktop/cmps183/web2py/applications/admin/&#x27;, &#x27;/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/Users/admin/Desktop/cmps183/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x1045168c0: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;admins-MacBook-Pro-3.local&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: True, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/Users/admin/Desktop/cmps183/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;hw5&#x27;, &#x27;grubmeet&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/Users/admin/Desktop/cmps183/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_py2</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>admins-MacBook-Pro-3.local</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.16.1-stable+timestamp.2017.11.14.05.54.25</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_scheduler</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2018, 6, 11, 11, 36, 3, 618665)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_args</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_extension</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/grubmeet/uploader/get_upload_url</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2018, 6, 11, 18, 36, 3, 618722)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x10be1f350&gt;</div></td></tr></table></div>'
+tRp65
+sS'frames'
+p66
+(lp67
+(dp68
+S'file'
+p69
+S'/Users/admin/Desktop/cmps183/web2py/gluon/restricted.py'
+p70
+sS'dump'
+p71
+(dp72
+S'environment'
+p73
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUCKET_NAME': '/image-uploader/', ...}"
+p74
+sS'ccode'
+p75
+S'<code object <module> at 0x10bc95b30, file "/Use...ations/grubmeet/controllers/uploader.py", line 1>'
+p76
+ssS'lnum'
+p77
+I219
+sS'lines'
+p78
+(dp79
+I214
+S'    if environment is None:'
+p80
+sI215
+S'        environment = {}'
+p81
+sI216
+S"    environment['__file__'] = layer"
+p82
+sI217
+S"    environment['__name__'] = '__restricted__'"
+p83
+sI218
+S'    try:'
+p84
+sI219
+S'        exec(ccode, environment)'
+p85
+sI220
+S'    except HTTP:'
+p86
+sI221
+S'        raise'
+p87
+sI222
+S'    except RestrictedError:'
+p88
+sI223
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p89
+ssS'call'
+p90
+S'(ccode=<code object <module> at 0x10bc95b30, file "/Use...ations/grubmeet/controllers/uploader.py", line 1>, environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'gluon.validators.ANY_OF\'>, \'ASSIGNJS\': <function ASSIGNJS>, \'AppConfig\': <function AppConfig>, \'Auth\': <class \'gluon.tools.Auth\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUCKET_NAME\': \'/image-uploader/\', ...}, layer=\'/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/controllers/uploader.py\', scode=<code object <module> at 0x10bc95b30, file "/Use...ations/grubmeet/controllers/uploader.py", line 1>)'
+p91
+sS'func'
+p92
+S'restricted'
+p93
+sa(dp94
+g69
+S'/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/controllers/uploader.py'
+p95
+sg71
+(dp96
+S'key_file'
+p97
+S"'/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/private/gcs_keys.json'"
+p98
+sS'json.load'
+p99
+S'<function load>'
+p100
+sS'json'
+p101
+S"<module 'json' from '/Users/admin/anaconda3/envs/python27/lib/python2.7/json/__init__.pyc'>"
+p102
+sS'GCS_KEY_INFO'
+p103
+S'undefined'
+p104
+sS'builtinopen'
+p105
+S'<built-in function open>'
+p106
+ssg77
+I31
+sg78
+(dp107
+I32
+S''
+sI33
+S''
+sI34
+S'def sign_url(path, expiration, account_email, keytext,'
+p108
+sI35
+S"             verb='GET', content_type='', content_md5=''):"
+p109
+sI26
+S"                    '{expiration}\\n'"
+p110
+sI27
+S"                    '{resource}')"
+p111
+sI28
+S''
+sI29
+S"priv_folder = os.path.join(current.request.folder, 'private')"
+p112
+sI30
+S"key_file = os.path.join(priv_folder, 'gcs_keys.json')"
+p113
+sI31
+S'GCS_KEY_INFO = json.load(open(key_file))'
+p114
+ssg90
+S'()'
+p115
+sg92
+S'<module>'
+p116
+sasS'pyver'
+p117
+S'Python 2.7.14: /Users/admin/anaconda3/envs/python27/bin/python (prefix: /Users/admin/anaconda3/envs/python27)'
+p118
+sS'session'
+p119
+g64
+(S's\xe8\x08\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">auth</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">expiration</td><td style="vertical-align:top;">:</td><td><div>3600</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">hmac_key</td><td style="vertical-align:top;">:</td><td><div>cc51f63c-4450-4a50-9dff-e81a88283e21</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_visit</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2018, 6, 11, 11, 36, 3, 618665)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remember_me</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">email</td><td style="vertical-align:top;">:</td><td><div>test1@test.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">first_name</td><td style="vertical-align:top;">:</td><td><div>test1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">id</td><td style="vertical-align:top;">:</td><td><div>1L</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_name</td><td style="vertical-align:top;">:</td><td><div>test1last</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_id</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">reset_password_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user_groups</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">1</td><td style="vertical-align:top;">:</td><td><div>user_1</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr></table></div>'
+tRp120
+sS'etype'
+p121
+S"<type 'exceptions.IOError'>"
+p122
+sS'date'
+p123
+S'Mon Jun 11 11:36:03 2018'
+p124
+sS'response'
+p125
+g64
+(S's\x85\x1e\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x10b294148&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_grubmeet</td><td style="vertical-align:top;">:</td><td><div>6:7ad8bc64-07ea-4b21-86c1-1b3c178da67a<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>bootstrap3_inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>*</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">google_analytics_id</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">logo</td><td style="vertical-align:top;">:</td><td><div><a class="navbar-brand" href="http://www.web2py.com/" id="web2py-logo"><b>web<span>2</span>py</b>&trade;&nbsp;</a></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div><table><tr><td><div>Home</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/grubmeet/default/index</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Pictures of Events</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/grubmeet/default/picture_gallery</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Calendar</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/grubmeet/default/calendar</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">author</td><td style="vertical-align:top;">:</td><td><div>Your Name &lt;you@example.com&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">description</td><td style="vertical-align:top;">:</td><td><div>a cool new app</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generator</td><td style="vertical-align:top;">:</td><td><div>Web2py Web Framework</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">keywords</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>web2py</div></td></tr><tr><td><div>python</div></td></tr><tr><td><div>framework</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^uploader/\\w+\\.py$</div></td></tr><tr><td><div>^uploader/get_upload_url/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_grubmeet</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_db_record_id</td><td style="vertical-align:top;">:</td><td><div>6L</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_db_table</td><td style="vertical-align:top;">:</td><td><div>&lt;Table web2py_session_grubmeet (id, locked, client_ip, created_datetime, modified_datetime, unique_key, session_data)&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_db_unique_key</td><td style="vertical-align:top;">:</td><td><div>7ad8bc64-07ea-4b21-86c1-1b3c178da67a</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>443a1aff8d5f130d015ab1bf86ced1bd</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>6:7ad8bc64-07ea-4b21-86c1-1b3c178da67a</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_grubmeet</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>grubmeet</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>db</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">subtitle</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">title</td><td style="vertical-align:top;">:</td><td><div>Grubmeet</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>uploader/get_upload_url.html</div></td></tr></table></div>'
+tRp126
+sS'locals'
+p127
+(dp128
+S'Service'
+p129
+S"<class 'gluon.tools.Service'>"
+p130
+sS'FORMAT'
+p131
+S"'%(asctime)s %(levelname)s %(process)s %(thread)s %(funcName)s():%(lineno)d %(message)s'"
+p132
+sS'TR'
+p133
+S"<class 'gluon.html.TR'>"
+p134
+sS'PY2'
+p135
+S'True'
+p136
+sS'OBJECT'
+p137
+S"<class 'gluon.html.OBJECT'>"
+p138
+sS'LOAD'
+p139
+S'<function LOAD>'
+p140
+sS'SQLDB'
+p141
+S"<class 'pydal.base.DAL'>"
+p142
+sg119
+S"<Storage {'flash': None, 'auth': <Storage {'reme...f7973', '5bd0bb16-e7ca-4f5c-86b0-b3e9ec3e57f2']}>"
+p143
+sS'LINK'
+p144
+S"<class 'gluon.html.LINK'>"
+p145
+sS'Auth'
+p146
+S"<class 'gluon.tools.Auth'>"
+p147
+sS'BR'
+p148
+S"<class 'gluon.html.BR'>"
+p149
+sS'local_import'
+p150
+S'<function <lambda>>'
+p151
+sS'OPTGROUP'
+p152
+S"<class 'gluon.html.OPTGROUP'>"
+p153
+sS'LI'
+p154
+S"<class 'gluon.html.LI'>"
+p155
+sS'PRE'
+p156
+S"<class 'gluon.html.PRE'>"
+p157
+sS'IS_INT_IN_RANGE'
+p158
+S"<class 'gluon.validators.IS_INT_IN_RANGE'>"
+p159
+sS'to_bytes'
+p160
+S'<function to_bytes>'
+p161
+sS'IS_LOWER'
+p162
+S"<class 'gluon.validators.IS_LOWER'>"
+p163
+sS'IS_STRONG'
+p164
+S"<class 'gluon.validators.IS_STRONG'>"
+p165
+sS'cache'
+p166
+S'<gluon.cache.Cache object>'
+p167
+sS'IS_IN_DB'
+p168
+S"<class 'gluon.validators.IS_IN_DB'>"
+p169
+sS'TAG'
+p170
+S'<gluon.html.__TAG__ object>'
+p171
+sS'SQLField'
+p172
+S"<class 'pydal.objects.Field'>"
+p173
+sS'mail'
+p174
+S'<gluon.tools.Mail object>'
+p175
+sS'logger'
+p176
+S'<logging.Logger object>'
+p177
+sS'BODY'
+p178
+S"<class 'gluon.html.BODY'>"
+p179
+sS'IS_DATE_IN_RANGE'
+p180
+S"<class 'gluon.validators.IS_DATE_IN_RANGE'>"
+p181
+sS'TH'
+p182
+S"<class 'gluon.html.TH'>"
+p183
+sS'URL'
+p184
+S'<function URL>'
+p185
+sS'__file__'
+p186
+S"'/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/controllers/uploader.py'"
+p187
+sS'db'
+p188
+S'<DAL uri="sqlite://storage.sqlite">'
+p189
+sS'auth'
+p190
+S'<gluon.tools.Auth object>'
+p191
+sS'P'
+S"<class 'gluon.html.P'>"
+p192
+sS'TFOOT'
+p193
+S"<class 'gluon.html.TFOOT'>"
+p194
+sS'iteritems'
+p195
+S'<function <lambda>>'
+p196
+sS'XHTML'
+p197
+S"<class 'gluon.html.XHTML'>"
+p198
+sS'datetime'
+p199
+S"<module 'datetime' from '/Users/admin/anaconda3/.../python27/lib/python2.7/lib-dynload/datetime.so'>"
+p200
+sS'ON'
+p201
+g136
+sS'OL'
+p202
+S"<class 'gluon.html.OL'>"
+p203
+sS'TEXTAREA'
+p204
+S"<class 'gluon.html.TEXTAREA'>"
+p205
+sS'MENU'
+p206
+S"<class 'gluon.html.MENU'>"
+p207
+sS'A'
+S"<class 'gluon.html.A'>"
+p208
+sS'CODE'
+p209
+S"<class 'gluon.html.CODE'>"
+p210
+sS'HTTP'
+p211
+S"<class 'gluon.http.HTTP'>"
+p212
+sS'HR'
+p213
+S"<class 'gluon.html.HR'>"
+p214
+sS'IS_DATETIME'
+p215
+S"<class 'gluon.validators.IS_DATETIME'>"
+p216
+sS'base64sign'
+p217
+S'<function base64sign>'
+p218
+sS'IS_FLOAT_IN_RANGE'
+p219
+S"<class 'gluon.validators.IS_FLOAT_IN_RANGE'>"
+p220
+sS'LABEL'
+p221
+S"<class 'gluon.html.LABEL'>"
+p222
+sS'CLEANUP'
+p223
+S"<class 'gluon.validators.CLEANUP'>"
+p224
+sS'plugins'
+p225
+S'<gluon.tools.PluginManager object>'
+p226
+sS'SHA256'
+p227
+S"<module 'Crypto.Hash.SHA256' from '/Users/admin/.../python2.7/site-packages/Crypto/Hash/SHA256.pyc'>"
+p228
+sS'SELECT'
+p229
+S"<class 'gluon.html.SELECT'>"
+p230
+sS'CENTER'
+p231
+S"<class 'gluon.html.CENTER'>"
+p232
+sS'urllib'
+p233
+S"<module 'urllib' from '/Users/admin/anaconda3/envs/python27/lib/python2.7/urllib.pyc'>"
+p234
+sS'DEVELOPMENT_MENU'
+p235
+g136
+sS'current'
+p236
+S'<thread._local object>'
+p237
+sS'__builtins__'
+p238
+S"{'ArithmeticError': <type 'exceptions.ArithmeticError'>, 'AssertionError': <type 'exceptions.AssertionError'>, 'AttributeError': <type 'exceptions.AttributeError'>, 'BaseException': <type 'exceptions.BaseException'>, 'BufferError': <type 'exceptions.BufferError'>, 'BytesWarning': <type 'exceptions.BytesWarning'>, 'DeprecationWarning': <type 'exceptions.DeprecationWarning'>, 'EOFError': <type 'exceptions.EOFError'>, 'Ellipsis': Ellipsis, 'EnvironmentError': <type 'exceptions.EnvironmentError'>, ...}"
+p239
+sS'HTML'
+p240
+S"<class 'gluon.html.HTML'>"
+p241
+sS'SQLFORM'
+p242
+S"<class 'gluon.sqlhtml.SQLFORM'>"
+p243
+sS'EM'
+p244
+S"<class 'gluon.html.EM'>"
+p245
+sS'redirect'
+p246
+S'<function redirect>'
+p247
+sS'FIELDSET'
+p248
+S"<class 'gluon.html.FIELDSET'>"
+p249
+sS'SIGNATURE_STRING'
+p250
+S"'{verb}\\n{content_md5}\\n{content_type}\\n{expiration}\\n{resource}'"
+p251
+sS'IS_EQUAL_TO'
+p252
+S"<class 'gluon.validators.IS_EQUAL_TO'>"
+p253
+sS'HEAD'
+p254
+S"<class 'gluon.html.HEAD'>"
+p255
+sS'embed64'
+p256
+S'<function embed64>'
+p257
+sS'IS_LIST_OF'
+p258
+S"<class 'gluon.validators.IS_LIST_OF'>"
+p259
+sS'__name__'
+p260
+S"'__restricted__'"
+p261
+sS'EMBED'
+p262
+S"<class 'gluon.html.EMBED'>"
+p263
+sS'_'
+S'<function _>'
+p264
+sS'FORM'
+p265
+S"<class 'gluon.html.FORM'>"
+p266
+sS'logging'
+p267
+S"<module 'logging' from '/Users/admin/anaconda3/envs/python27/lib/python2.7/logging/__init__.pyc'>"
+p268
+sS'myconf'
+p269
+S"{'forms': {'formstyle': 'bootstrap3_inline', 'se...': {'names': 'localhost:*, 127.0.0.1:*, *:*, *'}}"
+p270
+sS'H2'
+p271
+S"<class 'gluon.html.H2'>"
+p272
+sS'H3'
+p273
+S"<class 'gluon.html.H3'>"
+p274
+sS'AppConfig'
+p275
+S'<function AppConfig>'
+p276
+sS'H1'
+p277
+S"<class 'gluon.html.H1'>"
+p278
+sS'H6'
+p279
+S"<class 'gluon.html.H6'>"
+p280
+sS'H4'
+p281
+S"<class 'gluon.html.H4'>"
+p282
+sS'H5'
+p283
+S"<class 'gluon.html.H5'>"
+p284
+sS'UL'
+p285
+S"<class 'gluon.html.UL'>"
+p286
+sS'IS_UPPER'
+p287
+S"<class 'gluon.validators.IS_UPPER'>"
+p288
+sS'xmlescape'
+p289
+S'<function xmlescape>'
+p290
+sS'IS_TIME'
+p291
+S"<class 'gluon.validators.IS_TIME'>"
+p292
+sS'os'
+p293
+S"<module 'os' from '/Users/admin/anaconda3/envs/python27/lib/python2.7/os.pyc'>"
+p294
+sS'base64'
+p295
+S"<module 'base64' from '/Users/admin/anaconda3/envs/python27/lib/python2.7/base64.pyc'>"
+p296
+sS'OPTION'
+p297
+S"<class 'gluon.html.OPTION'>"
+p298
+sS'TITLE'
+p299
+S"<class 'gluon.html.TITLE'>"
+p300
+sS'CRYPT'
+p301
+S"<class 'gluon.validators.CRYPT'>"
+p302
+sS'IS_EMPTY_OR'
+p303
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p304
+sS'MARKMIN'
+p305
+S"<class 'gluon.html.MARKMIN'>"
+p306
+sS'web2py_uuid'
+p307
+S'<function web2py_uuid>'
+p308
+sS'INPUT'
+p309
+S"<class 'gluon.html.INPUT'>"
+p310
+sS'STRONG'
+p311
+S"<class 'gluon.html.STRONG'>"
+p312
+sS'COL'
+p313
+S"<class 'gluon.html.COL'>"
+p314
+sS'service'
+p315
+S'<gluon.tools.Service object>'
+p316
+sS'SCRIPT'
+p317
+S"<class 'gluon.html.SCRIPT'>"
+p318
+sS'json'
+p319
+S"<module 'json' from '/Users/admin/anaconda3/envs/python27/lib/python2.7/json/__init__.pyc'>"
+p320
+sS'TABLE'
+p321
+S"<class 'gluon.html.TABLE'>"
+p322
+sS'IS_EXPR'
+p323
+S"<class 'gluon.validators.IS_EXPR'>"
+p324
+sS'IS_IPV4'
+p325
+S"<class 'gluon.validators.IS_IPV4'>"
+p326
+sS'IS_LENGTH'
+p327
+S"<class 'gluon.validators.IS_LENGTH'>"
+p328
+sS'IS_IPV6'
+p329
+S"<class 'gluon.validators.IS_IPV6'>"
+p330
+sS'XML'
+p331
+S"<class 'gluon.html.XML'>"
+p332
+sS'B'
+S"<class 'gluon.html.B'>"
+p333
+sS'IMG'
+p334
+S"<class 'gluon.html.IMG'>"
+p335
+sS'SQLTABLE'
+p336
+S"<class 'gluon.sqlhtml.SQLTABLE'>"
+p337
+sS'reduce'
+p338
+S'<built-in function reduce>'
+p339
+sS'IS_MATCH'
+p340
+S"<class 'gluon.validators.IS_MATCH'>"
+p341
+sS'IS_ALPHANUMERIC'
+p342
+S"<class 'gluon.validators.IS_ALPHANUMERIC'>"
+p343
+sS'TBODY'
+p344
+S"<class 'gluon.html.TBODY'>"
+p345
+sS'SPAN'
+p346
+S"<class 'gluon.html.SPAN'>"
+p347
+sS'IS_JSON'
+p348
+S"<class 'gluon.validators.IS_JSON'>"
+p349
+sS'IS_IPADDRESS'
+p350
+S"<class 'gluon.validators.IS_IPADDRESS'>"
+p351
+sS'IS_SLUG'
+p352
+S"<class 'gluon.validators.IS_SLUG'>"
+p353
+sS'priv_folder'
+p354
+S"'/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/private'"
+p355
+sS'BEAUTIFY'
+p356
+S"<class 'gluon.html.BEAUTIFY'>"
+p357
+sS'META'
+p358
+S"<class 'gluon.html.META'>"
+p359
+sS'key_file'
+p360
+S"'/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/private/gcs_keys.json'"
+p361
+sS'BUTTON'
+p362
+S"<class 'gluon.html.BUTTON'>"
+p363
+sS'IS_DATE'
+p364
+S"<class 'gluon.validators.IS_DATE'>"
+p365
+sS'IS_EMAIL'
+p366
+S"<class 'gluon.validators.IS_EMAIL'>"
+p367
+sS'IS_NOT_EMPTY'
+p368
+S"<class 'gluon.validators.IS_NOT_EMPTY'>"
+p369
+sS'xrange'
+p370
+S"<type 'xrange'>"
+p371
+sS'get_user_email'
+p372
+S'<function get_user_email>'
+p373
+sS'CAT'
+p374
+S"<class 'gluon.html.CAT'>"
+p375
+sS'Field'
+p376
+S"<class 'pydal.objects.Field'>"
+p377
+sS'IS_LIST_OF_EMAILS'
+p378
+S"<class 'gluon.validators.IS_LIST_OF_EMAILS'>"
+p379
+sS'DIV'
+p380
+S"<class 'gluon.html.DIV'>"
+p381
+sS'LEGEND'
+p382
+S"<class 'gluon.html.LEGEND'>"
+p383
+sS'to_native'
+p384
+S'<function to_native>'
+p385
+sS'COLGROUP'
+p386
+S"<class 'gluon.html.COLGROUP'>"
+p387
+sS'DAL'
+p388
+S"<class 'pydal.base.DAL'>"
+p389
+sS'ASSIGNJS'
+p390
+S'<function ASSIGNJS>'
+p391
+sS'PKCS1_v1_5'
+p392
+S"<module 'Crypto.Signature.PKCS1_v1_5' from '/Use...7/site-packages/Crypto/Signature/PKCS1_v1_5.pyc'>"
+p393
+sS'__package__'
+p394
+S'None'
+p395
+sS'IFRAME'
+p396
+S"<class 'gluon.html.IFRAME'>"
+p397
+sS'TD'
+p398
+S"<class 'gluon.html.TD'>"
+p399
+sS'PluginManager'
+p400
+S"<class 'gluon.tools.PluginManager'>"
+p401
+sS'IS_URL'
+p402
+S"<class 'gluon.validators.IS_URL'>"
+p403
+sS'GCS_API_ENDPOINT'
+p404
+S"'https://storage.googleapis.com'"
+p405
+sS'STYLE'
+p406
+S"<class 'gluon.html.STYLE'>"
+p407
+sS'IS_DATETIME_IN_RANGE'
+p408
+S"<class 'gluon.validators.IS_DATETIME_IN_RANGE'>"
+p409
+sS'IS_IMAGE'
+p410
+S"<class 'gluon.validators.IS_IMAGE'>"
+p411
+sS'I'
+S"<class 'gluon.html.I'>"
+p412
+sS'sys'
+p413
+S"<module 'sys' (built-in)>"
+p414
+sS'IS_NOT_IN_DB'
+p415
+S"<class 'gluon.validators.IS_NOT_IN_DB'>"
+p416
+sS'BUCKET_NAME'
+p417
+S"'/image-uploader/'"
+p418
+sg125
+S"<Storage {'body': <cStringIO.StringO object at 0..._data)>, 'view': 'uploader/get_upload_url.html'}>"
+p419
+sS'THEAD'
+p420
+S"<class 'gluon.html.THEAD'>"
+p421
+sS'ANY_OF'
+p422
+S"<class 'gluon.validators.ANY_OF'>"
+p423
+sS'IS_NULL_OR'
+p424
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p425
+sg63
+S"<Storage {'_vars': <Storage {}>, 'function': 'ge.../Desktop/cmps183/web2py/applications/grubmeet/'}>"
+p426
+sS'RSA'
+p427
+S"<module 'Crypto.PublicKey.RSA' from '/Users/admi...ython2.7/site-packages/Crypto/PublicKey/RSA.pyc'>"
+p428
+sS'IS_IN_SET'
+p429
+S"<class 'gluon.validators.IS_IN_SET'>"
+p430
+sS'IS_UPLOAD_FILENAME'
+p431
+S"<class 'gluon.validators.IS_UPLOAD_FILENAME'>"
+p432
+sS'time'
+p433
+S"<module 'time' from '/Users/admin/anaconda3/envs/python27/lib/python2.7/lib-dynload/time.so'>"
+p434
+sS'IS_DECIMAL_IN_RANGE'
+p435
+S"<class 'gluon.validators.IS_DECIMAL_IN_RANGE'>"
+p436
+sS'TT'
+p437
+S"<class 'gluon.html.TT'>"
+p438
+sS'T'
+S'<gluon.languages.translator object>'
+p439
+sssS'traceback'
+p440
+S'Traceback (most recent call last):\n  File "/Users/admin/Desktop/cmps183/web2py/gluon/restricted.py", line 219, in restricted\n    exec(ccode, environment)\n  File "/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/controllers/uploader.py", line 31, in <module>\n    GCS_KEY_INFO = json.load(open(key_file))\nIOError: [Errno 2] No such file or directory: \'/Users/admin/Desktop/cmps183/web2py/applications/grubmeet/private/gcs_keys.json\'\n'
+p441
+s.
